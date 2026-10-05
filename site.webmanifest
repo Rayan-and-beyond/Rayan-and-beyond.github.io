@@ -1,0 +1,10 @@
+{
+  "name": "Rayan Alhusennan · Cybersecurity Portfolio",
+  "short_name": "Rayan Alhusennan",
+  "icons": [
+    { "src": "/icon-192.png?v=20260726", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png?v=20260726", "sizes": "512x512", "type": "image/png" }
+  ],
+  "background_color": "#efe8d8",
+  "display": "browser"
+}

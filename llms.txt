@@ -1,0 +1,104 @@
+# Rayan Alhusennan · Cybersecurity Portfolio
+
+> Rayan Alhusennan is a Computer Science graduate of Imam Abdulrahman Bin Faisal University (Saudi Arabia), graduated 2026 with a GPA of 4.4/5. Focused on cybersecurity and open to full-time roles: SOC, offensive security, and security engineering. eJPTv2 (INE) and CompTIA Security+ certified. This file carries the full text of his portfolio site, so you can read everything without rendering the page.
+
+The site is a single-page interactive portfolio presented through a vintage-Macintosh introduction. Section links below use the `?dossier` compatibility parameter, which opens the portfolio directly instead of playing the intro animation. Use these for crawling or reading; https://rayanalhusennan.me/ alone is the human-facing entry point.
+
+## Brief
+
+[Read on the site](https://rayanalhusennan.me/?dossier#brief)
+
+A Computer Science graduate with hands-on internship experience in penetration testing and vulnerability assessment, seeking a full-time role where security, networking, and engineering meet real adversary problems.
+
+He enjoys systems, how they are put together, how they behave under pressure, and what makes them break. Cybersecurity is that curiosity turned into a career.
+
+Alongside the academic track he holds Security+ and eJPTv2, and took part in the KAUST Academy × NCA Advanced Cybersecurity Training Program. The certifications are checkpoints and not the destination.
+
+## Credentials
+
+[Read on the site](https://rayanalhusennan.me/?dossier#credentials)
+
+- eJPTv2 (eLearnSecurity Junior Penetration Tester), issued by INE. Practical, fully hands-on certification covering network attacks, web application testing, host enumeration, and pivoting in a black-box environment. [Verify](https://certs.ine.com/7c7ee806-5c04-4fc6-a9db-ee04360bf77c#acc.biIKroRp)
+- CompTIA Security+. Industry baseline for security operations, risk management, threat and vulnerability management, and security architecture concepts. [Verify](https://beta.certmetrics.com/comptia/public/verification.aspx?code=V3JBW47RFN41QHS3)
+- Advanced Cybersecurity Training Program, KAUST Academy in partnership with the Saudi National Cybersecurity Authority (NCA). 40-hour intensive. [Certificate (PDF)](https://rayanalhusennan.me/assets/certs/KAUSTxNCA%20Certificate.pdf)
+- Cybersecurity Incident Response Analysis, STC × Misk virtual work experience. Simulated incident response analyst role at STC: email analysis, incident reporting, policy development, and a security awareness campaign. [Certificate (PDF)](https://rayanalhusennan.me/assets/certs/Certificate%20of%20Completion(STCxMisk).pdf)
+- McKinsey Forward, McKinsey.org. Structured problem solving, communicating for impact, adaptability and resilience, and working relationships. [Verify](https://www.credly.com/badges/e4f38e0b-c2a8-4ae5-8f52-386778319463)
+- Network and Communications Security, ISC². [Verify](https://coursera.org/share/510310a6ba8d5366b2fe55a3e60794c7)
+- Systems and Application Security, ISC². [Verify](https://coursera.org/share/8dea1e16eda8965b81935592bdf0698f)
+- Incident Response and Recovery, ISC². [Verify](https://coursera.org/share/77188085a4e5a058fd57cbbe7497d285)
+- Principles of Secure Coding, UC Davis. [Verify](https://coursera.org/share/9424401d99e86da72c2783d6ae34b0ee)
+- Security Principles and Operations, ISC². [Verify](https://coursera.org/share/5e25524d9e500e88a7cee419b77ee784)
+- eCPPTv3 (Certified Professional Penetration Tester), INE. In study.
+
+## Capabilities
+
+[Read on the site](https://rayanalhusennan.me/?dossier#capabilities)
+
+- Offensive and reconnaissance: Metasploit, Nmap, Burp Suite, Wireshark, TCP/IP
+- Analysis and forensics: Oledump, static PE analysis (pefile), log analysis and SIEM (Splunk), malware family classification, IOC extraction
+- Engineering: Python, Java, SQL, web application stack (Flask, FastAPI), artificial intelligence and ML
+- Standards and frameworks: NIST SP 800-61 Rev. 3, NIST SP 800-30, MITRE ATT&CK and D3FEND, CISA advisories, NCA controls
+- Practice: incident response and threat triage, technical reporting and documentation, security architecture and design, root cause analysis
+
+## Projects
+
+### ThreatSense. Graduation project, 2025 to 2026
+
+[Read on the site](https://rayanalhusennan.me/?dossier#threatsense) · [Source (GitHub)](https://github.com/Rayan-and-beyond/ThreatSense) · [Live demo](https://threatsense-demo.onrender.com/)
+
+ThreatSense turns a single malware sample into a fully cited Incident Response Action Plan. Containment through hardening, every step traced to NIST or MITRE.
+
+Role: security engineer, playbook author, ML lead, architect, designer. Stack: Python, Flask, SQLite, LightGBM, VirusTotal API, pefile. Standards: NIST SP 800-61r3, SP 800-30, CISA, NCA, ATT&CK, D3FEND.
+
+The problem: an analyst opens VirusTotal, reads thirty sandbox actions and a tree of MITRE ATT&CK techniques, and stares at the screen. The artifacts are there. The next eight hours are still spent translating them into containment steps, eradication checks, recovery actions, and post-incident hardening, manually, against three different standards documents.
+
+What it does, end to end:
+
+1. Static analysis and ML. Cross-checks the sample against a local EMBER2024 corpus, then runs its structural features through a trained LightGBM classifier to predict which of six malware families it belongs to.
+2. VirusTotal enrichment. Pulls live AV verdicts, the sample's observed behaviors inside commercial sandboxes, and the MITRE ATT&CK techniques those sandboxes flagged.
+3. Rule engine. A self-built deterministic 35-rule engine, authored from scratch, matches the observed techniques against a curated map of ATT&CK to D3FEND countermeasures, with every recommendation traced to NIST, CISA, or NCA guidance.
+4. Threat scoring. Four signals fold into one severity tier: what the file did, what family it belongs to, what other engines flagged, and how hard it tried to hide. Behavior carries the most weight.
+5. IRAP generation. A four-phase action plan (containment, eradication, recovery, hardening) covering classification, techniques, IOCs, and citations, shaped for three readers: an HTML view the analyst works the incident from, a JSON payload for downstream tooling, and a printable PDF for the post-incident report.
+
+### Stale. Multi-agent course auditor, hackathon project
+
+[Read on the site](https://rayanalhusennan.me/?dossier#stale) · [Live demo](https://stale-gamma.vercel.app)
+
+Built for the "Built With Opus 4.7: A Claude Code Hackathon" by Cerebral Valley. A multi-agent auditor for university CS courses. Drop in the slides and Stale flags what's gone stale, each fix backed by a real citation. Then pick a target role, and it shows what that job needs that you were never taught.
+
+Stack: Python, FastAPI, Jinja2, Anthropic Managed Agents API. Sources: JLS, Javadoc, JEPs, PEPs, RFCs, NIST, MDN.
+
+The problem: universities can't keep pace with how fast technology ages. By the time we graduate, a quiet fraction of what we learned has been replaced, deprecated, or flagged as insecure or wrong, and nobody told us until we walk into that job interview. Stale reads the slides, flags what's gone stale, fact-checks every flag against the real spec or advisory, and tells us what should replace it. A second pass maps the whole course against a target job role, framing the result as career-relevant evidence.
+
+## Experience and Education
+
+[Read on the site](https://rayanalhusennan.me/?dossier#service)
+
+- Khalifa A. Algosaibi Investments, Cybersecurity Intern, June 2026 to Aug 2026.
+  - Offensive Security: exploited a CVSS 8.8 CISA KEV during an authorized endpoint penetration test, capturing NTLMv2 credential material with Kali Linux and Metasploit.
+  - Custom Tooling and AI: built EventEyes, a Windows security assessment framework analyzing event logs and system configurations to generate an HTML dashboard; surfaced six validated findings and later evolved it into [Verifact](https://github.com/Rayan-and-beyond/Verifact), a public AI-agent skill for Codex and Claude Code.
+  - Attack Surface Management: assessed KAI's external exposure with CTM360 across DNS, SSL/TLS, exposed services, and corporate accounts appearing in breach datasets; delivered prioritized remediation recommendations to the Group IT Manager.
+  - Security Architecture and Posture: built two iterations of KAI's cybersecurity risk register, designed a VLAN-segmented network with a default-deny firewall baseline, and audited Windows endpoints against CIS Benchmarks and Microsoft Security Baselines.
+  - Operations and Delivery: produced management reports, remediation plans, and security case studies while handling approximately 50 IT support tickets through iTop.
+- Bachelor of Computer Science, Imam Abdulrahman Bin Faisal University, Aug 2021 to June 2026. GPA 4.4/5, Second Honours Degree.
+- King Abdulaziz Center for World Culture (Ithra, by Saudi Aramco), volunteer, Jan 2022 to present. Multi-year volunteer engagement with one of Saudi Arabia's flagship cultural institutions.
+- Cybersecurity Club, Imam Abdulrahman Bin Faisal University, Aug 2023 to Aug 2025. Administrative role across two academic years, supporting club operations and event coordination.
+- Computer Science and Information Technology Club, Imam Abdulrahman Bin Faisal University, Jan 2024 to Aug 2025. Administrative role, then crowd organizer for club events.
+- Google Developer Student Club, Imam Abdulrahman Bin Faisal University, Jan 2024 to June 2024. Finance lead; managed the club's budget and ran spending for the year's events.
+- Hajj Season 1445 AH, Saudi Arabian Boy Scouts Association, June 2024. Crowd organizing during one of the largest annual gatherings in the world.
+
+## Languages
+
+- Arabic: native
+- English: professional working proficiency
+
+## Contact
+
+[Read on the site](https://rayanalhusennan.me/?dossier#contact)
+
+Open to full-time roles in cybersecurity: SOC, offensive security, security engineering.
+
+- Email: [RayanAhmed.ALH@outlook.com](mailto:RayanAhmed.ALH@outlook.com)
+- LinkedIn: [linkedin.com/in/rayan-alhusennan](https://www.linkedin.com/in/rayan-alhusennan/)
+- GitHub: [github.com/Rayan-and-beyond](https://github.com/Rayan-and-beyond)
+- Website: https://rayanalhusennan.me/

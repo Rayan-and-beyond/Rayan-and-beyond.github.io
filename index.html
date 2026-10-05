@@ -1,0 +1,2419 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- NO theme-color meta, and this is deliberate: on iOS 26.x its parse-time value becomes a STATIC bar color and its presence DISABLES live tint sampling (tint-lab, on-device 2026-07-07; every build's frozen bar color matched the meta's initial content exactly). Without it, Safari samples the page live and the body backgrounds below drive the bars through every phase. -->
+
+  <title>Rayan Alhusennan · Cybersecurity Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Rayan Alhusennan. Computer Science graduate focused on cybersecurity, network security, and penetration testing. eJPTv2 and Security+ certified, open to full-time roles." />
+  <meta name="author" content="Rayan Alhusennan" />
+  <link rel="canonical" href="https://rayanalhusennan.me/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rayan Alhusennan" />
+  <meta property="og:title" content="Rayan Alhusennan · Cybersecurity Portfolio" />
+  <meta property="og:description"
+    content="Computer Science graduate focused on cybersecurity, network security, and penetration testing. eJPTv2 and Security+ certified, open to full-time roles." />
+  <meta property="og:url" content="https://rayanalhusennan.me/" />
+  <meta property="og:image" content="https://rayanalhusennan.me/assets/social-card-clearance.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"
+    content="Rayan Alhusennan cybersecurity portfolio card styled as a cryptographic security credential, highlighting penetration testing, network security, Security+, and eJPTv2." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rayan Alhusennan · Cybersecurity Portfolio" />
+  <meta name="twitter:description"
+    content="Computer Science graduate focused on cybersecurity, network security, and penetration testing. eJPTv2 and Security+ certified, open to full-time roles." />
+  <meta name="twitter:image" content="https://rayanalhusennan.me/assets/social-card-clearance.jpg" />
+  <meta name="twitter:image:alt" content="Rayan Alhusennan cybersecurity portfolio card styled as a cryptographic security credential, highlighting penetration testing, network security, Security+, and eJPTv2." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    (function machineBootPrelude() {
+      var query = location.search || "";
+      var forceMachine = false;
+      // Visitor URLs cannot override reduced motion.
+      var wantsDossier = query.indexOf("dossier") !== -1;
+      var reduceMotion = false;
+      try {
+        reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      } catch (e) { }
+      if (!wantsDossier && (!reduceMotion || forceMachine)) {
+        document.documentElement.classList.add("machine-booting");
+        // Warm the heavy machine assets while the JS graph is still resolving:
+        // the Mac model and the three sand textures otherwise start downloading
+        // only after boot.js -> main.js -> three.js have all arrived and run.
+        try {
+          var macFile = "mac-m9.glb";
+          var head = document.head;
+          var glbLink = document.createElement("link");
+          glbLink.rel = "preload";
+          glbLink.as = "fetch";
+          glbLink.href = "/" + macFile;
+          glbLink.crossOrigin = "anonymous";
+          head.appendChild(glbLink);
+          var sandFiles = ["sand_albedo.jpg", "sand_relief_nor.jpg", "sand_ao.jpg"];
+          for (var i = 0; i < sandFiles.length; i++) {
+            var texLink = document.createElement("link");
+            texLink.rel = "preload";
+            texLink.as = "image";
+            texLink.href = "/" + sandFiles[i];
+            texLink.crossOrigin = "anonymous";
+            head.appendChild(texLink);
+          }
+        } catch (e) { }
+        window.__machineFallbackTimer = window.setTimeout(function () {
+          if (window.__machineBooted) return;
+          document.documentElement.classList.remove("machine-booting");
+          if (document.body) document.body.classList.add("dossier-on");
+        }, 12000);
+      }
+    }());
+  </script>
+
+  <!-- Icons live in public/ with stable paths. Bump the shared revision when their artwork changes because browser favicon caches outlive normal reloads. No theme-color, per the note at the top of this file. -->
+  <link rel="icon" href="./favicon.ico?v=20260726" sizes="16x16 32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=20260726" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png?v=20260726" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./favicon.svg?v=20260726" />
+  <link rel="mask-icon" href="./safari-pinned-tab.svg?v=20260726" color="#b54426" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=20260726" />
+  <link rel="manifest" href="./site.webmanifest?v=20260726" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rayan Alhusennan",
+  "givenName": "Rayan",
+  "familyName": "Alhusennan",
+  "description": "Computer Science graduate of Imam Abdulrahman Bin Faisal University, focused on cybersecurity and open to full-time roles. eJPTv2 and CompTIA Security+ certified.",
+  "url": "https://rayanalhusennan.me",
+  "image": "https://rayanalhusennan.me/assets/social-card-clearance.jpg",
+  "email": "RayanAhmed.ALH@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "SA"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Imam Abdulrahman Bin Faisal University"
+  },
+  "knowsAbout": [
+    "Cybersecurity",
+    "Incident Response",
+    "Penetration Testing",
+    "Malware Analysis",
+    "MITRE ATT&CK",
+    "MITRE D3FEND",
+    "NIST SP 800-61",
+    "Static PE Analysis"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "eJPTv2",
+      "credentialCategory": "certification",
+      "recognizedBy": { "@type": "Organization", "name": "INE" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "CompTIA Security+",
+      "credentialCategory": "certification",
+      "recognizedBy": { "@type": "Organization", "name": "CompTIA" }
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/rayan-alhusennan/",
+    "https://github.com/Rayan-and-beyond"
+  ]
+}
+</script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* html only: the BODY's background is deliberately NEVER declared in any stylesheet. On iOS 26 a stylesheet-declared body background freezes the glass-bar tint sampler at its load-time value (tint-lab + on-device bisect, 2026-07-07: the frozen bar color matched the stylesheet body value in every build), while an inline-driven body keeps re-tinting live. The inline bootstrap script at body-open paints the first phase; setChrome drives the rest. */
+    html {
+      background: #eceae5;
+    }
+
+    /* NO overflow-x clip on body (nor on #dossier-root), deliberately: a root-level horizontal clip makes iOS 26 Safari treat the viewport as boxed and draw OPAQUE toolbar surfaces (frozen at their load-time color) instead of the edge-to-edge invisible glass every clip-free page gets (tint-lab + on-device bisect N=4, 2026-07-07). Horizontal overflow is policed by the mobile audit's element-overflow checks instead of a blanket clip. */
+    body {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    /* the scroll track drives the camera; tall enough for the full move (taller = the dive + loading bar take more scrolling) */
+    #track {
+      display: none;
+      height: 1000vh;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #dive-scroll,
+    #dive-range {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    html.machine-booting body:not(.dossier-on) #track {
+      display: block;
+    }
+
+    /* the 3D scene, behind everything. Fine pointers use the proven absolute + transform pin. Touch devices scroll the transparent #dive-scroll layer below while the canvas stays absolute at the root: there is no window-scroll pin for WebKit's asynchronous compositor to race. Never fixed or sticky: either fullscreen mode changes iOS 26's Liquid Glass toolbar geometry. Height is the LARGE viewport (lvh): on iOS the collapsing Safari toolbar then never resizes the canvas, so the dive never pays a composer reallocation or a camera reframe mid-scroll (on desktop lvh === vh, identical). touch-action declares the gesture contract: one-finger vertical pans are SCROLLING (Lenis paces them while it intercepts; native on every other path); the sand brush never owns a touch drag. pinch-zoom is deliberately NOT listed, because the desert does not scale (page zoom resamples the canvas instead of re-rendering it), but the declaration itself must never be removed: a canvas with no touch-action puts iOS 26 back into opaque-toolbar mode. */
+    #scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100lvh;
+      display: none;
+      z-index: 0;
+      touch-action: pan-y;
+    }
+
+    html.machine-booting body:not(.dossier-on) #scene {
+      display: block;
+    }
+
+    /* Physical iPhone winner, 2026-07-13. #track remains the in-flow 1000vh root range (which preserves Safari's compact glass). The transparent inner scroller has the identical 1000vh range, owns the gesture, and never moves the root page or canvas. Dossier mode hides the whole track as before. */
+    @media (pointer: coarse) and (prefers-reduced-motion: no-preference) {
+      html.machine-booting body:not(.dossier-on) #dive-scroll {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
+        pointer-events: auto;
+        touch-action: pan-y;
+        scrollbar-width: none;
+      }
+
+      html.machine-booting body:not(.dossier-on) #dive-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      html.machine-booting body:not(.dossier-on) #dive-range {
+        height: 1000vh;
+        pointer-events: none;
+      }
+
+      html.machine-booting body:not(.dossier-on) #scene {
+        transform: none !important;
+        pointer-events: none;
+      }
+    }
+
+    /* First-load recovery surface. The live WebGL pass replaces this dark first paint with exact point samples from the real Mac and dunes. */
+    /* ABSOLUTE, not fixed: a stylesheet-declared fixed painted fullscreen layer at first paint pushes iOS 26 into opaque-toolbar mode (the veil was the machine phase's first-paint pin). Absolute at the top of the (unscrollable-while-loading) page is visually identical during the veil's life. */
+    #veil {
+      --recovery-progress: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100lvh;
+      z-index: 40;
+      overflow: hidden;
+      background: #050607;
+      display: none;
+      pointer-events: auto;
+      color: #eadbc7;
+    }
+
+    html.machine-booting body:not(.dossier-on) #veil {
+      display: flex;
+    }
+
+    #veil::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.14;
+      background-image: radial-gradient(circle, rgba(234, 219, 199, 0.64) 0 0.65px, transparent 0.85px);
+      background-size: 83px 71px;
+      background-position: 19px 11px;
+      mask-image: radial-gradient(ellipse at 50% 62%, #000 0%, transparent 70%);
+      transition: opacity 180ms ease;
+    }
+
+    #veil.scene-ready {
+      background: transparent;
+    }
+
+    #veil.scene-ready::before {
+      opacity: 0;
+    }
+
+    #veil.gone {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .veil-box {
+      position: absolute;
+      inset: 0;
+      opacity: 1;
+      transition: opacity 180ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #veil.scene-ready .veil-box {
+      opacity: 1;
+    }
+
+    body.loader-active #hint,
+    body.loader-active #sound-control {
+      display: none !important;
+    }
+
+    /* scroll hint */
+    /* absolute, not fixed: any fixed element alive at first paint keeps iOS 26 in opaque-toolbar mode. Absolute at the large-viewport bottom puts it in the same spot at load (the page sits at scrollY 0 while the hint matters; it fades out within the first 2% of the dive anyway). */
+    #hint {
+      position: absolute;
+      top: calc(100lvh - 34px - env(safe-area-inset-bottom, 0px));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      pointer-events: none;
+      font-size: var(--scene-label-size, 8.5px);
+      letter-spacing: var(--scene-label-track, 0.19em);
+      text-transform: uppercase;
+      color: var(--scene-label-ink, rgba(241, 230, 210, 0.62));
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--scene-label-gap, 7px);
+      transition: opacity 0.5s ease;
+    }
+
+    html.machine-booting body:not(.dossier-on) #hint {
+      display: flex;
+    }
+
+    #hint .hint-label {
+      white-space: nowrap;
+    }
+
+    #hint svg {
+      width: 9px;
+      height: 9px;
+      opacity: 0.72;
+      transition: transform 180ms ease;
+    }
+
+    #hint.hint-swipe {
+      flex-direction: row-reverse;
+    }
+
+    #hint.hint-swipe svg {
+      transform: rotate(180deg);
+    }
+
+    /* filmic frame over the 3D scene: a warm lens vignette. pure DOM compositing, zero GPU cost in the WebGL frame; hidden with the rest of the machine layers once the dossier takes over. The film grain that used to live here (a flat feTurbulence overlay) moved into the sand material as a screen-space luma grain (Phase D, uSandGrain in src/main.js): on the sand only, so the sky, Mac, and CRT stay clean. */
+    /* the dive's camera vignette lives in the WebGL composer (VignetteEffect), NOT in the DOM: the old #filmic fixed overlay was one of the painted fixed layers that made iOS 26 draw opaque frozen toolbars instead of live glass (on-device CSS bisect, 2026-07-08) */
+
+    /* the committed blink lands here: a pure-black cover that guarantees the canvas->dossier handoff is black. above the dossier (incl. its grain z1000) so it cleanly covers the swap, then fades to reveal the dossier */
+    /* display none when idle: iOS 26 samples opacity-0 fixed elements for its bar tint, so a parked black cover would fight the #tint strips at both edges; setBlackout() toggles display with opacity */
+    /* stylesheet carries ONLY display:none; the fixed styling arrives inline at show-time via setBlackout(): fixed overlays that exist at first paint pin iOS 26's toolbars opaque */
+    #blackout {
+      display: none;
+    }
+
+    /* CRT power-up dress (stage 3): once the handoff is black, the dossier ignites like a tube turning on (raster unfold) and comes up still wearing the screen — scanlines, a blue phosphor cast, a glass vignette — then over ~1s the dress lifts and #dossier-root settles from a slight zoom to flat/clean. Sits just below #blackout so the unfold reads as the black opening, never over a hard cut. */
+    #powerup {
+      display: none;
+    }
+
+    /* fixed styling arrives inline at show-time, same rule as #blackout */
+    /* layout only: the children's PAINT arrives inline via showPowerupDress() when the dress is actually on stage (stylesheet-painted overlay layers participate in iOS 26's toolbar decision) */
+    #powerup .pu-blue {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+
+    #powerup .pu-scan {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+
+    #powerup .pu-vignette {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+
+    /* the ignition: a bright phosphor band that unfolds vertically from a center line to full, then fades. ABOVE #blackout (z1110) so it reads as the black tube opening from a hot center line, not a dim wash. */
+    /* display none when idle: a permanently-displayed painted fixed layer (even at opacity 0) makes iOS 26 draw opaque frozen toolbars instead of invisible edge-to-edge glass; setIgnite() toggles display with the flash (the bar saga's final culprit, on-device bisect 2026-07-07) */
+    #ignite {
+      display: none;
+    }
+
+    /* fixed styling arrives inline at show-time via setIgnite() */
+  </style>
+  <script type="module" crossorigin src="./assets/index-vsY-Rl0k.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BDfAd28T.css">
+</head>
+
+<body>
+  <script>
+    // body backgrounds are INLINE-ONLY, deliberately: a stylesheet-declared body background freezes
+    // the iOS 26 bar-tint sampler at its load-time value, while an inline-driven body stays live
+    // (tint-lab + on-device bisect, 2026-07-07). Painted at body-open so nothing flashes unstyled;
+    // the machine-booting class is set synchronously by the head bootstrap before this runs.
+    document.body.style.backgroundColor =
+      document.documentElement.classList.contains("machine-booting") ? "#050607" : "#efe8d8";
+  </script>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div id="track">
+    <div id="dive-scroll" data-lenis-prevent-touch data-lenis-prevent-wheel>
+      <div id="dive-range"></div>
+    </div>
+  </div>
+
+
+  <div id="hint"><span class="hint-label">Scroll to discover</span><svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M8 2 V13 M3.5 8.5 L8 13 L12.5 8.5" stroke="currentColor" stroke-width="1.2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </svg></div>
+
+  <div id="veil" role="progressbar" aria-label="Loading the three-dimensional opening" aria-valuemin="0"
+    aria-valuemax="100" aria-valuenow="0">
+    <div class="veil-box"></div>
+  </div>
+  <div id="blackout" aria-hidden="true"></div>
+  <div id="powerup" aria-hidden="true">
+    <div class="pu-blue"></div>
+    <div class="pu-scan"></div>
+    <div class="pu-vignette"></div>
+  </div>
+  <div id="ignite" aria-hidden="true"></div>
+  <!-- POWER BREAKER · a macro view inside the machine. The main bundle puts
+       this stage on screen only for the POWER shot; it ships display:none so
+       direct dossier entries and mobile browser chrome never see it at rest. -->
+  <div id="power-cut-stage" aria-hidden="true">
+    <canvas class="power-cut-canvas"></canvas>
+    <div class="power-cut-optics"></div>
+    <div class="power-cut-flash"></div>
+  </div>
+
+  <!-- ============================================================
+       DOSSIER · the readable fallback document. The machine bootstrap hides it only while the 3D opening is actively loading.
+       ============================================================ -->
+  <div id="dossier-root">
+
+
+    <!-- ============================================================
+     CORNER REGISTRATION MARKS · a tasteful nod to printed dossiers
+     ============================================================ -->
+    <svg class="reg-mark reg-tl" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M0 20 H40 M20 0 V40" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+    <svg class="reg-mark reg-tr" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M0 20 H40 M20 0 V40" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+    <svg class="reg-mark reg-bl" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M0 20 H40 M20 0 V40" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+    <svg class="reg-mark reg-br" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M0 20 H40 M20 0 V40" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+
+    <!-- subtle grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ============================================================
+     TOP BAR · dossier metadata
+     ============================================================ -->
+    <header class="dossier-bar">
+      <div class="bar-cell bar-left">
+        <span class="bar-tag">FILE</span>
+        <span class="bar-val">ALHUSENNAN · R</span>
+      </div>
+      <div class="bar-cell bar-mid">
+        <span class="bar-classification">
+          <span class="dot"></span>
+          <span class="bar-cls" data-scramble>OPEN TO FULL-TIME ROLES</span></span>
+      </div>
+      <div class="bar-cell bar-right">
+        <span class="bar-tag">DATE</span>
+        <span class="bar-val" id="today-stamp">·</span>
+      </div>
+    </header>
+
+    <div class="mobile-section-cue" aria-hidden="true">
+      <div class="mobile-section-cue__frame" data-title="">
+        <div class="mobile-section-cue__word">
+          <span class="mobile-section-cue__previous"></span>
+          <span class="mobile-section-cue__ash"></span>
+          <span class="mobile-section-cue__title"></span>
+          <span class="mobile-section-cue__flecks">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     FLOATING SIDE INDEX
+     ============================================================ -->
+    <nav class="side-index" aria-label="Section navigation" inert>
+      <ol>
+        <li><a href="#brief" data-num="01"><span>Brief</span></a></li>
+        <li><a href="#credentials" data-num="02"><span>Credentials</span></a></li>
+        <li><a href="#threatsense" data-num="03"><span class="project-name">ThreatSense</span></a></li>
+        <li><a href="#stale" data-num="04"><span class="project-name">Stale</span></a></li>
+        <li><a href="#capabilities" data-num="05"><span>Capabilities</span></a></li>
+        <li><a href="#service" data-num="06"><span>Experience</span></a></li>
+        <li><a href="#contact" data-num="07"><span>Contact</span></a></li>
+      </ol>
+    </nav>
+
+    <main class="page">
+
+      <!-- ============================================================
+       HERO
+       ============================================================ -->
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-meta">
+            <div class="kicker">
+              <span class="section-mark">§ 00</span>
+              <span class="kicker-text">Profile&nbsp;·&nbsp;Portfolio</span>
+            </div>
+
+          </div>
+
+          <h1 class="display-name" tabindex="-1">
+            <span class="line"><span class="reveal"><i>Rayan</i></span></span>
+            <span class="line"><span class="reveal">Alhusennan<span class="terminal-dot">.</span></span></span>
+          </h1>
+
+          <p class="hero-lede">
+            <span class="reveal">Computer Science graduate of <em>Imam Abdulrahman Bin Faisal University</em>, focused
+              on <em>cybersecurity</em>.</span>
+          </p>
+
+          <div class="hero-footer">
+            <div class="hero-stat">
+              <span class="stat-num">4.4<span class="dim">/5</span></span>
+              <span class="stat-lbl">GPA</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-num">10</span>
+              <span class="stat-lbl">Certifications</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-num">2026</span>
+              <span class="stat-lbl">Graduated</span>
+            </div>
+            <!-- The two certifications by name. They sit one per line by
+                 construction, never by wrapping: at the stat size each name
+                 clears the column from 320px up, and the old single-line
+                 "eJPTv2 · Sec+" broke mid-phrase instead. The count beside
+                 it stays the count; this cell is the two that carry weight. -->
+            <div class="hero-stat hero-stat-certs">
+              <span class="stat-num">
+                <span class="cert-line">eJPTv2</span>
+                <span class="cert-line">Security+</span>
+              </span>
+              <span class="stat-lbl">Certified</span>
+            </div>
+          </div>
+
+          <a href="#brief" class="scroll-cue">
+            <span>Begin reading</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 3 V17 M5 12 L10 17 L15 12" stroke="currentColor" stroke-width="1" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+
+          <!-- STATUS · phones only (see the <=720px block in styles.css).
+               Desktop says this in the file header's classification pill,
+               which mobile drops for width; here it returns as the landing's
+               closing line, paired with the cue above it. -->
+          <div class="status-pill">
+            <span class="pulse" aria-hidden="true"></span>
+            <span>OPEN TO FULL-TIME&nbsp;·&nbsp;CYBERSECURITY</span>
+          </div>
+        </div>
+
+        <!-- editorial seal · top-right on desktop; on phones it drops to the
+             foot of the landing screen and sits beside the status block. -->
+        <div class="hero-seal" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <path id="seal-arc-top" d="M 21,100 A 79,79 0 0 1 179,100" />
+                <path id="seal-arc-bot" d="M 12,100 A 88,88 0 0 0 188,100" />
+              </defs>
+              <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="1.4" />
+              <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="0.5" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="0.5" />
+              <circle cx="100" cy="100" r="67" fill="none" stroke="currentColor" stroke-width="1.4" />
+              <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="5.2" fill="currentColor"
+                text-anchor="middle">
+                <textPath href="#seal-arc-top" startOffset="50%">CYBERSECURITY</textPath>
+              </text>
+              <text font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="0.5" fill="currentColor"
+                text-anchor="middle">
+                <textPath href="#seal-arc-bot" startOffset="50%">PENETRATION TESTING · SECURITY ENGINEERING</textPath>
+              </text>
+              <path d="M 179.5 96.6 L 182.9 100 L 179.5 103.4 L 176.1 100 Z" fill="var(--rust)" />
+              <path d="M 20.5 96.6 L 23.9 100 L 20.5 103.4 L 17.1 100 Z" fill="var(--rust)" />
+              <text x="100" y="110.8" text-anchor="middle" font-family="Fraunces, serif" font-style="italic"
+                font-size="30" fill="currentColor" font-weight="500">RA</text>
+            </svg>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 01  BRIEF
+       ============================================================ -->
+      <section class="section section-brief" id="brief">
+        <header class="section-head">
+          <div class="head-left">
+            <span class="section-mark">§ 01</span>
+            <h2 class="section-title">Brief</h2>
+          </div>
+        </header>
+
+        <div class="brief-grid">
+          <div class="brief-body">
+            <p class="lede">
+              A Computer&nbsp;Science graduate with hands-on internship experience in penetration testing and vulnerability
+              assessment, seeking a full-time role where security, networking, and engineering meet real adversary problems.</p>
+
+            <p>
+              I enjoy systems, how they're put together, how they behave under pressure, and what makes them
+              break.</p>
+
+            <p class="brief-break">Cybersecurity is that curiosity turned into a <em class="mark-underline">career</em>.</p>
+
+            <p>
+              Alongside the academic track I hold the <em>Security+</em> and <em>eJPTv2</em>, and took part in the
+              <em>KAUST Academy × NCA</em> Advanced Cybersecurity Training Program.</p>
+
+          </div>
+
+          <aside class="brief-aside">
+            <div class="aside-note">
+              <span class="footnote-mark">*</span>
+              <span>The certifications are checkpoints and not the destination.</span>
+            </div>
+          </aside>
+        </div>
+
+      </section>
+
+      <!-- ============================================================
+       § 02  CREDENTIALS
+       ============================================================ -->
+      <section class="section section-credentials" id="credentials">
+        <header class="section-head">
+          <div class="head-left">
+            <span class="section-mark">§ 02</span>
+            <h2 class="section-title">Credentials</h2>
+          </div>
+        </header>
+
+        <div class="cred-grid">
+          <a class="cred cred-featured cred-link"
+            href="https://certs.ine.com/7c7ee806-5c04-4fc6-a9db-ee04360bf77c#acc.biIKroRp" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Penetration testing</span>
+              <span class="cred-issuer">INE</span>
+            </div>
+            <h3 class="cred-name">eJPTv2 <span class="cred-sub">eLearnSecurity Junior Penetration Tester</span></h3>
+            <p class="cred-desc">Practical, fully-hands-on certification covering network attacks, web application
+              testing, host enumeration, and pivoting in a black-box environment.</p>
+            <div class="cred-foot">
+              <span class="cred-stamp">PASSED</span>
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-featured cred-link"
+            href="https://beta.certmetrics.com/comptia/public/verification.aspx?code=V3JBW47RFN41QHS3" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Foundations</span>
+              <span class="cred-issuer">CompTIA</span>
+            </div>
+            <h3 class="cred-name">Security+ <span class="cred-sub">CompTIA</span></h3>
+            <p class="cred-desc">Industry baseline for security operations, risk management, threat &amp; vulnerability
+              management, and security architecture concepts.</p>
+            <div class="cred-foot">
+              <span class="cred-stamp">PASSED</span>
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="assets/certs/KAUSTxNCA%20Certificate.pdf" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Specialization</span>
+              <span class="cred-issuer">KAUST Academy × NCA</span>
+            </div>
+            <h3 class="cred-name">Advanced Cybersecurity Training Program</h3>
+            <p class="cred-desc">40-hour intensive training program conducted by KAUST Academy in partnership with the
+              Saudi National Cybersecurity Authority.</p>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="assets/certs/Certificate%20of%20Completion(STCxMisk).pdf" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Work Experience</span>
+              <span class="cred-issuer">STC × Misk</span>
+            </div>
+            <h3 class="cred-name">Cybersecurity Incident Response Analysis <span class="cred-sub">Virtual Work
+                Experience</span></h3>
+            <p class="cred-desc">Simulated incident response analyst role at STC, covering email analysis, incident
+              reporting, cybersecurity policy development, and a security awareness campaign.</p>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://www.credly.com/badges/e4f38e0b-c2a8-4ae5-8f52-386778319463"
+            target="_blank" rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Professional Development</span>
+              <span class="cred-issuer">McKinsey.org</span>
+            </div>
+            <h3 class="cred-name">McKinsey Forward</h3>
+            <p class="cred-desc">Covers structured problem solving, communicating for impact, adaptability and
+              resilience, and working relationships.</p>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://coursera.org/share/510310a6ba8d5366b2fe55a3e60794c7" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Networking</span>
+              <span class="cred-issuer">ISC²</span>
+            </div>
+            <h3 class="cred-name">Network and Communications Security</h3>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://coursera.org/share/8dea1e16eda8965b81935592bdf0698f" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Systems Security</span>
+              <span class="cred-issuer">ISC²</span>
+            </div>
+            <h3 class="cred-name">Systems and Application Security</h3>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://coursera.org/share/77188085a4e5a058fd57cbbe7497d285" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Incident Response</span>
+              <span class="cred-issuer">ISC²</span>
+            </div>
+            <h3 class="cred-name">Incident Response and Recovery</h3>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://coursera.org/share/9424401d99e86da72c2783d6ae34b0ee" target="_blank"
+            rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Secure Engineering</span>
+              <span class="cred-issuer">UC Davis</span>
+            </div>
+            <h3 class="cred-name">Principles of Secure Coding</h3>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <a class="cred cred-link" href="https://coursera.org/share/5e25524d9e500e88a7cee419b77ee784"
+            target="_blank" rel="noopener noreferrer">
+            <div class="cred-top">
+              <span class="cred-tag">Operations</span>
+              <span class="cred-issuer">ISC²</span>
+            </div>
+            <h3 class="cred-name">Security Principles and Operations</h3>
+            <div class="cred-foot cred-foot-end">
+              <span class="cred-verify">Verify <span class="arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+            </div>
+          </a>
+
+          <article class="cred cred-progress">
+            <div class="cred-top">
+              <span class="cred-tag">In progress</span>
+              <span class="cred-issuer">INE</span>
+            </div>
+            <h3 class="cred-name">eCPPTv3 <span class="cred-sub">Certified Professional Penetration Tester</span></h3>
+            <div class="cred-foot">
+              <span class="cred-stamp progress">IN STUDY</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 03  ThreatSense · Featured Case Study
+       ============================================================ -->
+      <section class="section section-case" id="threatsense">
+        <header class="section-head case-head">
+          <div class="head-left">
+            <span class="section-mark">§ 03</span>
+            <h2 class="section-title">Featured&nbsp;· Case&nbsp;Study&nbsp;I</h2>
+          </div>
+          <div class="head-right">
+            <span class="head-anno">2025 – 2026 · Graduation Project</span>
+            <a class="case-mini-gh" href="https://github.com/Rayan-and-beyond/ThreatSense" target="_blank"
+              rel="noopener noreferrer" aria-label="ThreatSense source code on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          </div>
+        </header>
+
+        <div class="case">
+          <h3 class="case-name">ThreatSense<span class="terminal-dot">.</span></h3>
+          <p class="case-deck">
+            ThreatSense turns a single malware sample into a fully cited <em>Incident Response Action Plan</em>.
+            Containment through hardening, every step traced to NIST or MITRE.</p>
+
+          <ul class="case-meta">
+            <li><span class="k">Role</span><span class="v">Security engineer · Playbook author · ML lead · Architect ·
+                Designer</span></li>
+            <li><span class="k">Stack</span><span class="v">Python · Flask · SQLite · LightGBM · VirusTotal API ·
+                pefile</span></li>
+            <li><span class="k">Standards</span><span class="v">NIST SP 800-61r3 · SP 800-30 · CISA · NCA · ATT&amp;CK ·
+                D3FEND</span></li>
+            <li><span class="k">Status</span><span class="v"><a class="case-meta-link"
+                  href="https://threatsense-demo.onrender.com/" target="_blank" rel="noopener noreferrer">LIVE <span
+                    class="arrow" aria-hidden="true">↗&#xFE0E;</span></a></span></li>
+          </ul>
+
+          <div class="case-quote">
+            <p>
+              <span class="quote-open">“</span>Incident Response tools stop at identification. Nobody writes the
+              response plan for you.<br /><em>ThreatSense does.</em><span class="quote-open">”</span>
+            </p>
+          </div>
+
+          <div class="case-section">
+            <h4 class="case-h">The problem</h4>
+            <p>
+              An analyst opens VirusTotal, reads thirty sandbox actions and a tree of MITRE ATT&amp;CK techniques, and
+              stares at the screen. The artifacts are <em>there</em>. The next eight hours are still spent translating
+              them into containment steps, eradication checks, recovery actions, and post-incident hardening, manually,
+              against three different standards documents.</p>
+          </div>
+
+          <div class="case-section">
+            <h4 class="case-h">What it does, end to end</h4>
+            <ol class="numbered m-only">
+              <li><span class="num">01</span>
+                <div><strong>Static analysis &amp; ML.</strong> EMBER2024 cross-check, then a LightGBM verdict across
+                  six malware families.</div>
+              </li>
+              <li><span class="num">02</span>
+                <div><strong>VirusTotal enrichment.</strong> Live AV verdicts, sandbox behaviours, and the ATT&amp;CK
+                  techniques they triggered.</div>
+              </li>
+              <li><span class="num">03</span>
+                <div><strong>Rule engine.</strong> 35 self-built deterministic rules map ATT&amp;CK to D3FEND, each
+                  cited to NIST, CISA, or NCA.</div>
+              </li>
+              <li><span class="num">04</span>
+                <div><strong>Threat scoring.</strong> Four signals fold into one severity tier; behaviour carries the
+                  most weight.</div>
+              </li>
+              <li><span class="num">05</span>
+                <div><strong>IRAP generation.</strong> A phase-ordered action plan, rendered as HTML, JSON, and PDF.
+                </div>
+              </li>
+            </ol>
+            <ol class="numbered d-only">
+              <li><span class="num">01</span>
+                <div><strong>Static analysis &amp; ML.</strong> Cross-checks the sample against a local EMBER2024
+                  corpus, then runs its structural features through a trained LightGBM classifier to predict which of
+                  six malware families it belongs to.</div>
+              </li>
+              <li><span class="num">02</span>
+                <div><strong>VirusTotal enrichment.</strong> Pulls live AV verdicts, the sample's observed behaviors
+                  inside commercial sandboxes, and the MITRE ATT&amp;CK techniques those sandboxes flagged.</div>
+              </li>
+              <li><span class="num">03</span>
+                <div><strong>Rule engine.</strong> A <em>self-built</em> deterministic 35-rule engine, authored from
+                  scratch, matches the observed techniques against a curated map of ATT&amp;CK → D3FEND countermeasures,
+                  with every recommendation traced to NIST, CISA, or NCA guidance.</div>
+              </li>
+              <li><span class="num">04</span>
+                <div><strong>Threat scoring.</strong> Four signals fold into one severity tier: what the file
+                  <em>did</em>, what family it belongs to, what other engines flagged, and how hard it tried to hide.
+                  Behavior carries the most weight, because what a sample does is more telling than what it claims to
+                  be.
+                </div>
+              </li>
+              <li><span class="num">05</span>
+                <div><strong>IRAP generation.</strong> A four-phase action plan (containment, eradication, recovery,
+                  hardening) covering classification, techniques, IOCs, and citations. Generated
+                  once and shaped for three readers: an HTML view the analyst works the incident from, a JSON payload
+                  for downstream tooling, and a printable PDF for the post-incident report.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="case-section case-arch">
+            <h4 class="case-h">Architecture</h4>
+            <figure class="diagram-wrap d-only" aria-label="ThreatSense pipeline diagram">
+              <svg viewBox="0 0 1100 854" class="case-diagram" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <marker id="ts2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#4b443c" />
+                  </marker>
+                  <marker id="ts2-arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#b54426" />
+                  </marker>
+                  <marker id="ts2-arrow-tiny" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#8a8174" />
+                  </marker>
+                </defs>
+
+                <!-- Title block, top-right · drafting style -->
+                <g class="diag-titleblock">
+                  <rect x="930" y="20" width="150" height="52" fill="none" stroke="#16130f" stroke-width="0.6" />
+                  <text x="938" y="44" class="diag-tb-title">ThreatSense</text>
+                  <text x="938" y="60" class="diag-tb-sub">end-to-end pipeline</text>
+                </g>
+
+                <!-- Column headings -->
+                <text x="40" y="36" class="diag-col-head">THE SYSTEM</text>
+                <text x="660" y="36" class="diag-col-head">WHY IT&apos;S SHAPED THIS WAY</text>
+                <line x1="40" y1="46" x2="900" y2="46" stroke="#16130f" stroke-width="0.4" opacity="0.4" />
+
+                <!-- Vertical divider -->
+                <line x1="640" y1="80" x2="640" y2="800" stroke="#b54426" stroke-width="0.4" stroke-dasharray="2 6"
+                  opacity="0.5" />
+
+                <!-- ============= STEP 1 · INGEST ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="120" r="14" class="diag-num" />
+                  <text x="60" y="125" text-anchor="middle" class="diag-num-text">1</text>
+                  <rect x="90" y="86" width="510" height="78" class="diag-box diag-box-strong" />
+                  <text x="105" y="106" class="diag-pretitle">[ 1 ]&nbsp;&nbsp;ingest</text>
+                  <text x="345" y="126" text-anchor="middle" class="diag-step-title">A sample comes in.</text>
+                  <text x="345" y="150" text-anchor="middle" class="diag-step-sub">A known fingerprint, or the file
+                    itself.</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="120" r="10" class="diag-num-ghost" />
+                  <text x="660" y="124" text-anchor="middle" class="diag-num-ghost-text">1</text>
+                  <text x="684" y="116" class="diag-note-text">Two forms of input because analysts don&apos;t
+                    always</text>
+                  <text x="684" y="134" class="diag-note-text">have the file. Sometimes all they have is the</text>
+                  <text x="684" y="152" class="diag-note-text">fingerprint from another tool&apos;s alert.</text>
+                </g>
+
+                <!-- arrow 1 → 2 with typed I/O -->
+                <path d="M345 168 V196" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#ts2-arrow)" />
+                <text x="358" y="186" class="diag-arrow-label">sample { sha256, bytes? }</text>
+
+                <!-- ============= STEP 2 · ANALYZE · FAN-OUT ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="252" r="14" class="diag-num" />
+                  <text x="60" y="257" text-anchor="middle" class="diag-num-text">2</text>
+                  <rect x="90" y="200" width="510" height="164" class="diag-box" />
+                  <text x="105" y="218" class="diag-pretitle">[ 2 ]&nbsp;&nbsp;analyze &middot; fan-out</text>
+                  <text x="345" y="240" text-anchor="middle" class="diag-step-title">Three independent lenses look at
+                    it.</text>
+
+                  <!-- fork junction + line + three down-arrows into sub-box tops -->
+                  <line x1="184" y1="252" x2="506" y2="252" class="diag-fork-line" />
+                  <circle cx="345" cy="252" r="2.4" class="diag-fork-node" />
+                  <path d="M184 252 V262" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+                  <path d="M345 252 V262" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+                  <path d="M506 252 V262" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+
+                  <g class="diag-substep">
+                    <rect x="106" y="266" width="156" height="84" class="diag-subbox" />
+                    <text x="184" y="284" text-anchor="middle" class="diag-pretitle">lens a</text>
+                    <text x="184" y="304" text-anchor="middle" class="diag-sub-title">Cross-check</text>
+                    <text x="184" y="322" text-anchor="middle" class="diag-sig">features &rarr; hit | miss</text>
+                    <text x="184" y="338" text-anchor="middle" class="diag-engine">EMBER2024 corpus</text>
+                  </g>
+                  <g class="diag-substep">
+                    <rect x="267" y="266" width="156" height="84" class="diag-subbox" />
+                    <text x="345" y="284" text-anchor="middle" class="diag-pretitle">lens b</text>
+                    <text x="345" y="304" text-anchor="middle" class="diag-sub-title">Take apart</text>
+                    <text x="345" y="322" text-anchor="middle" class="diag-sig">bytes &rarr; features[ ]</text>
+                    <text x="345" y="338" text-anchor="middle" class="diag-engine">pefile</text>
+                  </g>
+                  <g class="diag-substep">
+                    <rect x="428" y="266" width="156" height="84" class="diag-subbox" />
+                    <text x="506" y="284" text-anchor="middle" class="diag-pretitle">lens c</text>
+                    <text x="506" y="304" text-anchor="middle" class="diag-sub-title">Watch it</text>
+                    <text x="506" y="322" text-anchor="middle" class="diag-sig">bytes &rarr; behaviours[ ]</text>
+                    <text x="506" y="338" text-anchor="middle" class="diag-engine">VirusTotal sandbox</text>
+                  </g>
+
+                  <!-- join: three down-arrows to join line -->
+                  <path d="M184 350 V358" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+                  <path d="M345 350 V358" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+                  <path d="M506 350 V358" class="diag-fork-line" marker-end="url(#ts2-arrow-tiny)" />
+                  <line x1="184" y1="360" x2="506" y2="360" class="diag-fork-line" />
+                  <circle cx="345" cy="360" r="2.4" class="diag-fork-node" />
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="252" r="10" class="diag-num-ghost" />
+                  <text x="660" y="256" text-anchor="middle" class="diag-num-ghost-text">2</text>
+                  <text x="684" y="248" class="diag-note-text">Three sources because no single signal is reliable
+                    on</text>
+                  <text x="684" y="266" class="diag-note-text">its own. They cross-check each other; a quiet miss
+                    in</text>
+                  <text x="684" y="284" class="diag-note-text">one lens is caught by the other two. The system
+                    also</text>
+                  <text x="684" y="302" class="diag-note-text">runs in <tspan class="diag-note-i">graceful degradation
+                      modes</tspan>: if a lens is</text>
+                  <text x="684" y="320" class="diag-note-text">unavailable, it says so, lowers the confidence,
+                    and</text>
+                  <text x="684" y="338" class="diag-note-text">keeps going. It will not fake an answer.</text>
+                </g>
+
+                <!-- arrow 2 → 3 with typed I/O -->
+                <path d="M345 364 V396" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#ts2-arrow)" />
+                <text x="358" y="382" class="diag-arrow-label">{ hit, features[ ], behaviours[ ] }</text>
+
+                <!-- ============= STEP 3 · FUSE · CLASSIFY ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="430" r="14" class="diag-num" />
+                  <text x="60" y="435" text-anchor="middle" class="diag-num-text">3</text>
+                  <rect x="90" y="400" width="510" height="80" class="diag-box" />
+                  <text x="105" y="418" class="diag-pretitle">[ 3 ]&nbsp;&nbsp;fuse &middot; classify</text>
+                  <text x="345" y="438" text-anchor="middle" class="diag-step-title">One verdict, with its
+                    evidence.</text>
+                  <text x="345" y="462" text-anchor="middle" class="diag-step-sub">What it is &middot; what it did
+                    &middot; how confident we are</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="430" r="10" class="diag-num-ghost" />
+                  <text x="660" y="434" text-anchor="middle" class="diag-num-ghost-text">3</text>
+                  <text x="684" y="424" class="diag-note-text">A trained classifier helps shape the verdict, but
+                    the</text>
+                  <text x="684" y="442" class="diag-note-text">verdict is always shown <tspan class="diag-note-i">with
+                      the evidence it leaned</tspan></text>
+                  <text x="684" y="460" class="diag-note-text">
+                    <tspan class="diag-note-i">on</tspan>. An analyst can audit the call. No black box.
+                  </text>
+                </g>
+
+                <!-- arrow 3 → 4 (rust, crosses the determinism line) + typed I/O -->
+                <path d="M345 480 V516" stroke="#b54426" stroke-width="1" fill="none"
+                  marker-end="url(#ts2-arrow-rust)" />
+                <text x="358" y="490" class="diag-arrow-label diag-arrow-label-rust">verdict { label, evidence[ ], conf
+                  }</text>
+
+                <!-- ============= TRUST BOUNDARY ============= -->
+                <line x1="40" y1="500" x2="620" y2="500" class="diag-trust-line" />
+                <rect x="265" y="492" width="160" height="16" class="diag-trust-mask" />
+                <text x="345" y="504" text-anchor="middle" class="diag-trust-label">determinism line</text>
+
+                <!-- ============= STEP 4 · DETERMINISTIC LAYER ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="572" r="14" class="diag-num diag-num-rust" />
+                  <text x="60" y="577" text-anchor="middle" class="diag-num-text">4</text>
+                  <rect x="90" y="520" width="510" height="116" class="diag-box diag-box-accent" />
+                  <text x="105" y="540" class="diag-pretitle diag-pretitle-rust">[ 4 ]&nbsp;&nbsp;map &middot; 35-rule
+                    engine &middot; rule.yaml</text>
+                  <text x="345" y="572" text-anchor="middle" class="diag-step-title diag-step-title-rust">A
+                    deterministic rule engine writes the response.</text>
+                  <text x="345" y="598" text-anchor="middle" class="diag-step-sub">Each observed behaviour &rarr; a
+                    published countermeasure</text>
+                  <text x="345" y="618" text-anchor="middle" class="diag-step-sub">&rarr; a recommendation cited to
+                    NIST, CISA, or MITRE</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="572" r="10" class="diag-num-ghost" />
+                  <text x="660" y="576" text-anchor="middle" class="diag-num-ghost-text">4</text>
+                  <text x="684" y="548" class="diag-note-text">This is the determinism line. The classifier above
+                    informs</text>
+                  <text x="684" y="566" class="diag-note-text">the verdict, but it <tspan class="diag-note-i">never
+                      writes the recommendations</tspan>.</text>
+                  <text x="684" y="584" class="diag-note-text">Every step in the response plan is a deterministic</text>
+                  <text x="684" y="602" class="diag-note-text">mapping to a real, published standard. That is
+                    what</text>
+                  <text x="684" y="620" class="diag-note-text">makes the plan defensible in front of an audit.</text>
+                </g>
+
+                <!-- arrow 4 → 5 with typed I/O -->
+                <path d="M345 636 V676" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#ts2-arrow)" />
+                <text x="358" y="660" class="diag-arrow-label">actions[ ] { id, control, citation }</text>
+
+                <!-- ============= STEP 5 · RENDER · ARTIFACTS ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="720" r="14" class="diag-num" />
+                  <text x="60" y="725" text-anchor="middle" class="diag-num-text">5</text>
+                  <rect x="90" y="680" width="510" height="100" class="diag-box diag-box-strong" />
+                  <text x="105" y="700" class="diag-pretitle">[ 5 ]&nbsp;&nbsp;render &middot; artifacts</text>
+                  <text x="345" y="720" text-anchor="middle" class="diag-step-title">A response plan you can act
+                    on.</text>
+                  <text x="345" y="744" text-anchor="middle" class="diag-step-sub">Contain &middot; Eradicate &middot;
+                    Recover &middot; Harden</text>
+                  <text x="345" y="766" text-anchor="middle" class="diag-sig">irap.html &middot; irap.json &middot;
+                    irap.pdf</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="720" r="10" class="diag-num-ghost" />
+                  <text x="660" y="724" text-anchor="middle" class="diag-num-ghost-text">5</text>
+                  <text x="684" y="708" class="diag-note-text">The four-phase order comes from <tspan
+                      class="diag-note-i">published</tspan></text>
+                  <text x="684" y="726" class="diag-note-text">
+                    <tspan class="diag-note-i">NIST guidance</tspan>, not invented for this project. Three
+                  </text>
+                  <text x="684" y="744" class="diag-note-text">output forms match how analysts actually work:
+                    quick</text>
+                  <text x="684" y="762" class="diag-note-text">screen read; structured for downstream tools;
+                    printable</text>
+                  <text x="684" y="780" class="diag-note-text">for the post-incident file.</text>
+                </g>
+
+                <!-- ============= LEGEND STRIP ============= -->
+                <line x1="40" y1="806" x2="1080" y2="806" class="diag-legend-rule" />
+                <g class="diag-legend">
+                  <text x="40" y="828" class="diag-pretitle diag-pretitle-rust">legend</text>
+
+                  <line x1="130" y1="824" x2="158" y2="824" stroke="#4b443c" stroke-width="0.8"
+                    marker-end="url(#ts2-arrow-tiny)" />
+                  <text x="166" y="828" class="diag-legend-text">data flow</text>
+
+                  <line x1="280" y1="824" x2="312" y2="824" class="diag-trust-line" />
+                  <text x="320" y="828" class="diag-legend-text">determinism line</text>
+
+                  <rect x="468" y="817" width="14" height="14" class="diag-box-accent" />
+                  <text x="490" y="828" class="diag-legend-text">deterministic only</text>
+
+                  <rect x="630" y="817" width="14" height="14" class="diag-subbox" />
+                  <text x="652" y="828" class="diag-legend-text">parallel lens</text>
+
+                  <text x="820" y="828" class="diag-legend-text" text-anchor="start">tag&nbsp;&nbsp;[ n
+                    ]&nbsp;&nbsp;module id</text>
+                </g>
+              </svg>
+              <figcaption class="diag-cap">ThreatSense end-to-end pipeline. Left: how a sample moves through the system,
+                with the typed data passing between each stage. Right: the reasoning behind each layer.</figcaption>
+            </figure>
+            <figure class="diagram-wrap diagram-panels m-only" aria-label="ThreatSense pipeline diagram">
+              <p class="dp-colhead">The system</p>
+              <ol class="dp-steps">
+
+                <!-- ============= STEP 1 · INGEST ============= -->
+                <li class="dp-step">
+                  <div class="dp-card dp-card-strong">
+                    <p class="dp-tag"><span class="dp-num">1</span>ingest</p>
+                    <h5 class="dp-title">A sample comes in.</h5>
+                    <p class="dp-sub">A known fingerprint, or the file itself.</p>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">sample { sha256, bytes? }</span></p>
+                </li>
+
+                <!-- ============= STEP 2 · ANALYZE · FAN-OUT ============= -->
+                <li class="dp-step">
+                  <div class="dp-card">
+                    <p class="dp-tag"><span class="dp-num">2</span>analyze &middot; fan-out</p>
+                    <h5 class="dp-title">Three independent lenses look at it.</h5>
+                    <ul class="dp-lenses">
+                      <li class="dp-lens">
+                        <p class="dp-tag dp-tag-sub">lens a</p>
+                        <h6 class="dp-lens-title">Cross-check</h6>
+                        <p class="dp-sig">features &rarr; hit | miss</p>
+                        <p class="dp-engine">EMBER2024 corpus</p>
+                      </li>
+                      <li class="dp-lens">
+                        <p class="dp-tag dp-tag-sub">lens b</p>
+                        <h6 class="dp-lens-title">Take apart</h6>
+                        <p class="dp-sig">bytes &rarr; features[ ]</p>
+                        <p class="dp-engine">pefile</p>
+                      </li>
+                      <li class="dp-lens">
+                        <p class="dp-tag dp-tag-sub">lens c</p>
+                        <h6 class="dp-lens-title">Watch it</h6>
+                        <p class="dp-sig">bytes &rarr; behaviours[ ]</p>
+                        <p class="dp-engine">VirusTotal sandbox</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">{ hit, features[ ], behaviours[ ] }</span></p>
+                </li>
+
+                <!-- ============= STEP 3 · FUSE · CLASSIFY ============= -->
+                <li class="dp-step">
+                  <div class="dp-card">
+                    <p class="dp-tag"><span class="dp-num">3</span>fuse &middot; classify</p>
+                    <h5 class="dp-title">One verdict, with its evidence.</h5>
+                    <p class="dp-sub">What it is &middot; what it did &middot; how confident we are</p>
+                  </div>
+                  <p class="dp-out dp-out-rust"><span class="dp-sig">verdict { label, evidence[ ], conf }</span></p>
+                </li>
+
+                <!-- ============= STEP 4 · DETERMINISTIC LAYER ============= -->
+                <li class="dp-step">
+                  <p class="dp-trust">determinism line</p>
+                  <div class="dp-card dp-card-accent">
+                    <p class="dp-tag"><span class="dp-num">4</span>map &middot; 35-rule engine &middot; rule.yaml</p>
+                    <h5 class="dp-title">A deterministic rule engine writes the response.</h5>
+                    <p class="dp-sub">Each observed behaviour &rarr; a published countermeasure &rarr; a recommendation
+                      cited to NIST, CISA, or MITRE</p>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">actions[ ] { id, control, citation }</span></p>
+                </li>
+
+                <!-- ============= STEP 5 · RENDER · ARTIFACTS ============= -->
+                <li class="dp-step">
+                  <div class="dp-card dp-card-strong">
+                    <p class="dp-tag"><span class="dp-num">5</span>render &middot; artifacts</p>
+                    <h5 class="dp-title">A response plan you can act on.</h5>
+                    <p class="dp-sub">Contain &middot; Eradicate &middot; Recover &middot; Harden</p>
+                    <p class="dp-sig dp-sig-block">irap.html &middot; irap.json &middot; irap.pdf</p>
+                  </div>
+                </li>
+              </ol>
+
+              <!-- ============= LEGEND ============= -->
+              <div class="dp-legend">
+                <p class="dp-tag dp-tag-rust">legend</p>
+                <ul>
+                  <li><span class="dp-key dp-key-flow" aria-hidden="true"></span>data flow</li>
+                  <li><span class="dp-key dp-key-trust" aria-hidden="true"></span>determinism line</li>
+                  <li><span class="dp-key dp-key-det" aria-hidden="true"></span>deterministic only</li>
+                  <li><span class="dp-key dp-key-lens" aria-hidden="true"></span>parallel lens</li>
+                </ul>
+              </div>
+              <figcaption class="diag-cap">ThreatSense end-to-end pipeline: how a sample moves through the system, with
+                the typed data passing between each stage.</figcaption>
+            </figure>
+          </div>
+
+          <div class="case-section case-tryit">
+            <h4 class="case-h">The rule engine, live</h4>
+            <div class="tryit">
+              <p class="tryit-deck">Pick a technique. The engine returns the matching D3FEND countermeasure, a one-line
+                recommendation, and the standard it cites. <span class="tryit-count-desk">Six</span><span
+                  class="tryit-count-mob">Three</span> of the thirty-five rules.</p>
+
+              <div class="tryit-chips" role="group" aria-label="ATT&amp;CK techniques">
+                <button class="tryit-chip is-active" type="button" data-rule-idx="0" aria-pressed="true">
+                  <span class="chip-id">T1486</span>
+                  <span class="chip-tactic">Impact</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="1" aria-pressed="false">
+                  <span class="chip-id">T1003</span>
+                  <span class="chip-tactic">Credential Access</span>
+                </button>
+                <button class="tryit-chip" type="button" data-rule-idx="2" aria-pressed="false">
+                  <span class="chip-id">T1059</span>
+                  <span class="chip-tactic">Execution</span>
+                </button>
+                <button class="tryit-chip" type="button" data-rule-idx="3" aria-pressed="false">
+                  <span class="chip-id">T1547.001</span>
+                  <span class="chip-tactic">Persistence</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="4" aria-pressed="false">
+                  <span class="chip-id">T1071</span>
+                  <span class="chip-tactic">Command &amp; Control</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="5" aria-pressed="false">
+                  <span class="chip-id">T1021</span>
+                  <span class="chip-tactic">Lateral Movement</span>
+                </button>
+              </div>
+
+              <div class="tryit-panel" aria-live="polite">
+                <div class="tryit-row">
+                  <span class="tryit-pretitle">Observed technique</span>
+                  <div class="tryit-row-body">
+                    <span class="tryit-id" data-field="attackId">T1486</span>
+                    <span class="tryit-name" data-field="attackName">Data Encrypted for Impact</span>
+                    <span class="tryit-meta-sub" data-field="meta">Impact tactic · Ransomware</span>
+                  </div>
+                </div>
+
+                <div class="tryit-row">
+                  <span class="tryit-pretitle">D3FEND countermeasure</span>
+                  <div class="tryit-row-body">
+                    <span class="tryit-id" data-field="d3fendId">D3-NI</span>
+                    <span class="tryit-name" data-field="d3fendName">Network Isolation</span>
+                  </div>
+                </div>
+
+                <div class="tryit-row tryit-row-action">
+                  <span class="tryit-pretitle">Recommendation</span>
+                  <p class="tryit-action" data-field="action">Isolate the host immediately. Do not power it off;
+                    encryption keys may still be recoverable from memory.</p>
+                </div>
+
+                <div class="tryit-row tryit-row-cite">
+                  <span class="tryit-pretitle">Cited to</span>
+                  <span class="tryit-cite" data-field="citation">CISA #StopRansomware Checklist §1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section case-stats">
+            <h4 class="case-h">By the numbers</h4>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="stat-big">35</span>
+                <span class="stat-lbl">Deterministic ATT&amp;CK&nbsp;→&nbsp;D3FEND rules</span>
+              </div>
+              <div class="stat">
+                <span class="stat-big">2,568</span>
+                <span class="stat-lbl">EMBER2024 feature dimensions</span>
+              </div>
+              <div class="stat">
+                <span class="stat-big">93.25<span class="dim">%</span></span>
+                <span class="stat-lbl">LightGBM accuracy · Win32 subset</span>
+              </div>
+              <div class="stat">
+                <span class="stat-big">0.78</span>
+                <span class="stat-lbl">Macro F1 across 6 families</span>
+              </div>
+              <div class="stat">
+                <span class="stat-big">4</span>
+                <span class="stat-lbl">Graceful degradation modes</span>
+              </div>
+              <div class="stat">
+                <span class="stat-big stat-duration"><span class="stat-duration-part">8<span class="dim">h</span></span><span class="dim stat-duration-arrow" aria-hidden="true"> → </span><span class="stat-duration-part">10<span class="dim">m</span></span></span>
+                <span class="stat-lbl">Analyst time per sample</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section">
+            <h4 class="case-h">Design choices I'd defend in front of a panel</h4>
+            <ul class="bullets m-only">
+              <li><strong>No LLMs anywhere in the pipeline.</strong> A hallucinated citation is not defensible in front
+                of an auditor.</li>
+              <li><strong>ML as a supporting actor.</strong> LightGBM can say which features drove the verdict;
+                black-box accuracy cannot.</li>
+              <li><strong>Four graceful degradation modes.</strong> Missing evidence lowers confidence; it is never
+                invented.</li>
+              <li><strong>D3FEND IDs verified three times.</strong> Five corrections applied during spec-locking.</li>
+            </ul>
+            <ul class="bullets d-only">
+              <li><strong>No LLMs anywhere in the pipeline.</strong> The 35 rules are fixed and the citations are real
+                codes. A generative model would draft the same incident two different ways and would occasionally
+                fabricate a NIST or D3FEND ID that resolves to nothing. An IRAP has to be defensible in front of an
+                auditor; a hallucinated one isn't.</li>
+              <li><strong>ML as a supporting actor, not the thesis.</strong> A deep-net classifier would likely top the
+                accuracy chart, but LightGBM was chosen because it can tell you <em>which features drove the
+                  verdict</em>. That explanation feeds straight into the IRAP's reasoning. Black-box accuracy can't.
+              </li>
+              <li><strong>Four graceful degradation modes.</strong> The pipeline draws from several data sources, and
+                some days one of them is unavailable. Rather than failing silently or inventing what it can't see, the
+                system drops to a lower confidence tier, tells the analyst exactly what evidence is missing, and refuses
+                to fabricate the rest.</li>
+              <li><strong>D3FEND IDs verified three times.</strong> Five corrections were applied during spec-locking.
+                Citations that look right but resolve wrong are worse than no citations.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 04  Stale · Featured Case Study II
+       ============================================================ -->
+      <section class="section section-case" id="stale">
+        <header class="section-head case-head">
+          <div class="head-left">
+            <span class="section-mark">§ 04</span>
+            <h2 class="section-title">Featured&nbsp;· Case&nbsp;Study&nbsp;II</h2>
+          </div>
+          <div class="head-right">
+            <span class="head-anno">2026 · Claude Code Hackathon</span>
+            <a class="case-mini-gh" href="https://github.com/Rayan-and-beyond/Stale" target="_blank"
+              rel="noopener noreferrer" aria-label="Stale source code on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          </div>
+        </header>
+
+        <div class="case">
+          <h3 class="case-name">Stale<span class="terminal-dot">.</span></h3>
+          <p class="case-deck">
+            A multi-agent auditor for university CS courses. Drop in the slides and Stale flags what's <em>gone
+              stale</em>, each fix backed by a real citation. Then pick a target role, and it shows what that job needs
+            that you were never taught.</p>
+
+          <ul class="case-meta">
+            <li><span class="k">Event</span><span class="v"><a
+                  href="https://cerebralvalley.ai/e/built-with-4-7-hackathon" target="_blank"
+                  rel="noopener noreferrer">Built With Opus 4.7: A Claude Code Hackathon</a></span></li>
+            <li><span class="k">Stack</span><span class="v">Python · FastAPI · Jinja2 · Anthropic Managed Agents
+                API</span></li>
+            <li><span class="k">Sources</span><span class="v">JLS · Javadoc · JEPs · PEPs · RFCs · NIST · MDN</span>
+            </li>
+            <li><span class="k">Status</span><span class="v"><a class="case-meta-link"
+                  href="https://stale-gamma.vercel.app" target="_blank" rel="noopener noreferrer">LIVE <span
+                    class="arrow" aria-hidden="true">↗&#xFE0E;</span></a></span></li>
+          </ul>
+
+          <div class="case-quote">
+            <p>
+              <span class="quote-open">“</span>Stale keeps your tools updated and your knife sharp, in sync with the
+              industry and how developers really work, <span class="quote-punch">before</span> you walk into that
+              interview. Not after it.<span
+                class="quote-open">”</span>
+            </p>
+          </div>
+
+          <div class="case-section">
+            <h4 class="case-h">The problem</h4>
+            <p class="d-only">
+              Universities can't keep pace with how fast technology ages. By the time we graduate, a quiet fraction of
+              what we learned has been replaced, deprecated, or flagged as insecure or wrong, and nobody told us until
+              we walk into that job interview.</p>
+            <p class="d-only">
+              Stale closes that gap one course at a time, and frames the result as <em>career-relevant evidence</em>
+              against the role we're actually applying for.</p>
+            <p class="m-only">
+              Universities can't keep pace with how fast technology ages. By the time we graduate, a quiet fraction of
+              what we learned has been replaced, deprecated, or flagged as insecure or wrong, and nobody told us until
+              we walk into that job interview.</p>
+            <p class="m-only">
+              Stale reads the slides, flags what's gone stale, fact-checks every flag against the real spec or advisory,
+              and tells us what should replace it. A second pass maps the whole course against a target job role.</p>
+          </div>
+
+          <div class="case-section stale-example">
+            <h4 class="case-h">A real finding</h4>
+            <article class="stale-finding" aria-labelledby="stale-finding-title">
+              <header class="stale-finding-head">
+                <h5 id="stale-finding-title">A search for one student shows every student.</h5>
+                <p class="stale-finding-location">SQL injection · Lecture 6 · Database &amp; Content Providers · pages 9, 22</p>
+              </header>
+              <p class="stale-finding-input">A student types this in the roll number box:
+                <code dir="ltr" lang="en">' OR '1'='1</code>
+              </p>
+              <div class="stale-finding-compare">
+                <section class="stale-finding-side stale-finding-unsafe" aria-labelledby="stale-finding-unsafe-title">
+                  <h6 id="stale-finding-unsafe-title">Slide code <span>Unsafe</span></h6>
+                  <pre class="stale-finding-code" tabindex="0" dir="ltr" lang="en" aria-label="Original vulnerable Java query from the slide"><code>Cursor c = db.rawQuery(
+  "SELECT * FROM student WHERE rollno='"
+    <span class="stale-code-difference">+ editRollno.getText() + "'"</span>,
+  null);</code></pre>
+                  <p><strong>SQL injection risk.</strong><span>This input changes the search and shows every student's record.</span></p>
+                </section>
+                <section class="stale-finding-side stale-finding-safe" aria-labelledby="stale-finding-safe-title">
+                  <h6 id="stale-finding-safe-title">Corrected code <span>Safe</span></h6>
+                  <pre class="stale-finding-code" tabindex="0" dir="ltr" lang="en" aria-label="Corrected Java query with a bound value"><code>Cursor c = db.rawQuery(
+  "SELECT * FROM student WHERE rollno = <span class="stale-code-difference">?</span>",
+  <span class="stale-code-difference">new String[]{rollno}</span>);</code></pre>
+                  <p><strong>SQL injection prevented.</strong><span>The search looks for that exact text and finds no student.</span></p>
+                </section>
+              </div>
+            </article>
+          </div>
+
+          <div class="case-section case-arch">
+            <h4 class="case-h">Architecture</h4>
+            <figure class="diagram-wrap d-only" aria-label="Stale agent pipeline">
+              <svg viewBox="0 0 1100 1118" class="case-diagram" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <marker id="st2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#4b443c" />
+                  </marker>
+                  <marker id="st2-arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#b54426" />
+                  </marker>
+                  <marker id="st2-arrow-tiny" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5"
+                    orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#8a8174" />
+                  </marker>
+                </defs>
+
+                <!-- Title block, top-right -->
+                <g class="diag-titleblock">
+                  <rect x="930" y="20" width="150" height="52" fill="none" stroke="#16130f" stroke-width="0.6" />
+                  <text x="938" y="44" class="diag-tb-title">Stale</text>
+                  <text x="938" y="60" class="diag-tb-sub">audit + analysis pipeline</text>
+                </g>
+
+                <!-- Column headings -->
+                <text x="40" y="36" class="diag-col-head">THE SYSTEM</text>
+                <text x="660" y="36" class="diag-col-head">WHY IT&apos;S SHAPED THIS WAY</text>
+                <line x1="40" y1="46" x2="900" y2="46" stroke="#16130f" stroke-width="0.4" opacity="0.4" />
+
+                <line x1="640" y1="80" x2="640" y2="1048" stroke="#b54426" stroke-width="0.4" stroke-dasharray="2 6"
+                  opacity="0.5" />
+
+                <!-- ============= STEP 1 · INPUT ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="134" r="14" class="diag-num" />
+                  <text x="60" y="139" text-anchor="middle" class="diag-num-text">1</text>
+                  <rect x="90" y="92" width="510" height="84" class="diag-box diag-box-strong" />
+                  <text x="105" y="111" class="diag-pretitle">[ 1 ]&nbsp;&nbsp;input</text>
+                  <text x="345" y="134" text-anchor="middle" class="diag-step-title">A course comes in.</text>
+                  <text x="345" y="158" text-anchor="middle" class="diag-step-sub">Its slide decks &middot; plus the
+                    role you&apos;re chasing</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="134" r="10" class="diag-num-ghost" />
+                  <text x="660" y="138" text-anchor="middle" class="diag-num-ghost-text">1</text>
+                  <text x="684" y="116" class="diag-note-text">One course at a time, paired with one target role.</text>
+                  <text x="684" y="134" class="diag-note-text">Each pair is its own self-contained audit; you</text>
+                  <text x="684" y="152" class="diag-note-text">run as many as your degree has, in any order.</text>
+                </g>
+
+                <!-- arrow 1 → 2 + typed I/O -->
+                <path d="M345 180 V208" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#st2-arrow)" />
+                <text x="358" y="198" class="diag-arrow-label">course { decks[ ], role }</text>
+
+                <!-- ============= STEP 2 · RECALL ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="270" r="14" class="diag-num" />
+                  <text x="60" y="275" text-anchor="middle" class="diag-num-text">2</text>
+                  <rect x="90" y="212" width="510" height="116" class="diag-box" />
+                  <text x="105" y="231" class="diag-pretitle">[ 2 ]&nbsp;&nbsp;first pass &middot; wide net</text>
+                  <text x="345" y="261" text-anchor="middle" class="diag-step-title">Cast a wide net.</text>
+                  <text x="345" y="287" text-anchor="middle" class="diag-step-sub">One AI reads every slide and lists
+                    anything</text>
+                  <text x="345" y="307" text-anchor="middle" class="diag-step-sub">that <tspan class="diag-sub-i">might
+                    </tspan> be outdated. No judgment calls.</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="270" r="10" class="diag-num-ghost" />
+                  <text x="660" y="274" text-anchor="middle" class="diag-num-ghost-text">2</text>
+                  <text x="684" y="234" class="diag-note-text">The first build tried to do recall <tspan
+                      class="diag-note-i">and</tspan> judgment</text>
+                  <text x="684" y="252" class="diag-note-text">in one pass. It came back confident and wrong,</text>
+                  <text x="684" y="270" class="diag-note-text">quietly explaining away real, important problems
+                    as</text>
+                  <text x="684" y="288" class="diag-note-text">
+                    <tspan class="diag-note-i">&ldquo;probably just a teaching example.&rdquo;</tspan> Splitting recall
+                  </text>
+                  <text x="684" y="306" class="diag-note-text">out as its own stage was the unlock.</text>
+                </g>
+
+                <!-- arrow 2 → 3 + typed I/O -->
+                <path d="M345 332 V360" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#st2-arrow)" />
+                <text x="358" y="350" class="diag-arrow-label">candidates[ ] { slide, claim }</text>
+
+                <!-- ============= STEP 3 · JUDGMENT ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="422" r="14" class="diag-num" />
+                  <text x="60" y="427" text-anchor="middle" class="diag-num-text">3</text>
+                  <rect x="90" y="364" width="510" height="116" class="diag-box" />
+                  <text x="105" y="383" class="diag-pretitle">[ 3 ]&nbsp;&nbsp;second pass &middot; careful
+                    scrutiny</text>
+                  <text x="345" y="413" text-anchor="middle" class="diag-step-title">Weigh each candidate, one at a
+                    time.</text>
+                  <text x="345" y="439" text-anchor="middle" class="diag-step-sub">A more careful AI flags or skips each
+                    one,</text>
+                  <text x="345" y="459" text-anchor="middle" class="diag-step-sub">but a flag has to come back with a
+                    real source.</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="422" r="10" class="diag-num-ghost" />
+                  <text x="660" y="426" text-anchor="middle" class="diag-num-ghost-text">3</text>
+                  <text x="684" y="395" class="diag-note-text">Burden of proof is on <tspan class="diag-note-i">
+                      dismissing</tspan>, not on</text>
+                  <text x="684" y="413" class="diag-note-text">flagging: the exact opposite of how the first
+                    attempt</text>
+                  <text x="684" y="431" class="diag-note-text">failed. A skip has to be justified just as
+                    carefully</text>
+                  <text x="684" y="449" class="diag-note-text">as a flag, which kills silent rationalisation.</text>
+                </g>
+
+                <!-- arrow 3 → 4 (rust, crosses the determinism line) + typed I/O -->
+                <path d="M345 484 V524" stroke="#b54426" stroke-width="1" fill="none"
+                  marker-end="url(#st2-arrow-rust)" />
+                <text x="358" y="496" class="diag-arrow-label diag-arrow-label-rust">flags[ ] { claim, citation }</text>
+
+                <!-- ============= TRUST BOUNDARY ============= -->
+                <line x1="40" y1="508" x2="620" y2="508" class="diag-trust-line" />
+                <rect x="265" y="500" width="160" height="16" class="diag-trust-mask" />
+                <text x="345" y="512" text-anchor="middle" class="diag-trust-label">determinism line</text>
+
+                <!-- ============= STEP 4 · FACT-CHECK ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="582" r="14" class="diag-num diag-num-rust" />
+                  <text x="60" y="587" text-anchor="middle" class="diag-num-text">4</text>
+                  <rect x="90" y="528" width="510" height="108" class="diag-box diag-box-accent" />
+                  <text x="105" y="547" class="diag-pretitle diag-pretitle-rust">[ 4 ]&nbsp;&nbsp;a deterministic layer
+                    &middot; no AI here</text>
+                  <text x="345" y="578" text-anchor="middle" class="diag-step-title diag-step-title-rust">Fact-check
+                    every claim.</text>
+                  <text x="345" y="604" text-anchor="middle" class="diag-step-sub">A plain program re-downloads each
+                    cited source and confirms</text>
+                  <text x="345" y="624" text-anchor="middle" class="diag-step-sub">the quoted text is really
+                    there.</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="582" r="10" class="diag-num-ghost" />
+                  <text x="660" y="586" text-anchor="middle" class="diag-num-ghost-text">4</text>
+                  <text x="684" y="546" class="diag-note-text">The fact-checker is deliberately <tspan
+                      class="diag-note-i">not</tspan> an AI. It</text>
+                  <text x="684" y="564" class="diag-note-text">costs 0 tokens and catches the one thing</text>
+                  <text x="684" y="582" class="diag-note-text">the smartest model still gets wrong: <tspan
+                      class="diag-note-i">fabricated</tspan></text>
+                  <text x="684" y="600" class="diag-note-text">
+                    <tspan class="diag-note-i">citations</tspan>. Hallucinated quotes die here, before
+                  </text>
+                  <text x="684" y="618" class="diag-note-text">they ever reach a student&apos;s report.</text>
+                </g>
+
+                <!-- arrow 4 → 5 + typed I/O -->
+                <path d="M345 640 V668" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#st2-arrow)" />
+                <text x="358" y="658" class="diag-arrow-label">findings[ ] { claim, source, verified }</text>
+
+                <!-- ============= STEP 5 · TWO LENSES (parallel) ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="796" r="14" class="diag-num" />
+                  <text x="60" y="801" text-anchor="middle" class="diag-num-text">5</text>
+                  <rect x="90" y="672" width="510" height="248" class="diag-box" />
+                  <text x="105" y="691" class="diag-pretitle">[ 5 ]&nbsp;&nbsp;two lenses</text>
+                  <text x="345" y="716" text-anchor="middle" class="diag-step-title">Same verified findings, two
+                    lenses.</text>
+
+                  <line x1="225" y1="730" x2="465" y2="730" class="diag-fork-line" />
+                  <circle cx="345" cy="730" r="2.4" class="diag-fork-node" />
+                  <path d="M225 730 V740" class="diag-fork-line" marker-end="url(#st2-arrow-tiny)" />
+                  <path d="M465 730 V740" class="diag-fork-line" marker-end="url(#st2-arrow-tiny)" />
+
+                  <g class="diag-substep">
+                    <rect x="110" y="744" width="230" height="142" class="diag-subbox" />
+                    <text x="225" y="768" text-anchor="middle" class="diag-pretitle">lens a &middot; role-aware</text>
+                    <text x="225" y="794" text-anchor="middle" class="diag-sub-title">Market-fit</text>
+                    <text x="225" y="814" text-anchor="middle" class="diag-sub-meta">what the role asks for,</text>
+                    <text x="225" y="830" text-anchor="middle" class="diag-sub-meta">vs. what the courses taught</text>
+                    <text x="225" y="852" text-anchor="middle" class="diag-sig">role &times; findings[ ] &rarr; gaps[
+                      ]</text>
+                    <text x="225" y="870" text-anchor="middle" class="diag-engine">managed agent</text>
+                  </g>
+                  <g class="diag-substep">
+                    <rect x="350" y="744" width="230" height="142" class="diag-subbox" />
+                    <text x="465" y="768" text-anchor="middle" class="diag-pretitle">lens b &middot; prescription</text>
+                    <text x="465" y="794" text-anchor="middle" class="diag-sub-title">Topics</text>
+                    <text x="465" y="814" text-anchor="middle" class="diag-sub-meta">a ranked list of what</text>
+                    <text x="465" y="830" text-anchor="middle" class="diag-sub-meta">to add next, in order</text>
+                    <text x="465" y="852" text-anchor="middle" class="diag-sig">findings[ ] &rarr; ranked[ ]</text>
+                    <text x="465" y="870" text-anchor="middle" class="diag-engine">managed agent</text>
+                  </g>
+
+                  <path d="M225 886 V894" class="diag-fork-line" marker-end="url(#st2-arrow-tiny)" />
+                  <path d="M465 886 V894" class="diag-fork-line" marker-end="url(#st2-arrow-tiny)" />
+                  <line x1="225" y1="896" x2="465" y2="896" class="diag-fork-line" />
+                  <circle cx="345" cy="896" r="2.4" class="diag-fork-node" />
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="796" r="10" class="diag-num-ghost" />
+                  <text x="660" y="800" text-anchor="middle" class="diag-num-ghost-text">5</text>
+                  <text x="684" y="760" class="diag-note-text">Both lenses read the <tspan class="diag-note-i">same
+                      verified findings</tspan>,</text>
+                  <text x="684" y="778" class="diag-note-text">so neither can recommend extending something the</text>
+                  <text x="684" y="796" class="diag-note-text">audit already flagged. The fact-checker upstream</text>
+                  <text x="684" y="814" class="diag-note-text">is the consistency seam: it prevents the analysis</text>
+                  <text x="684" y="832" class="diag-note-text">stages from contradicting the audit.</text>
+                </g>
+
+                <!-- arrow 5 → 6 + typed I/O -->
+                <path d="M345 924 V952" stroke="#4b443c" stroke-width="0.8" fill="none" marker-end="url(#st2-arrow)" />
+                <text x="358" y="942" class="diag-arrow-label">report { findings, marketFit, topics }</text>
+
+                <!-- ============= STEP 6 · REPORT ============= -->
+                <g class="diag-step">
+                  <circle cx="60" cy="998" r="14" class="diag-num" />
+                  <text x="60" y="1003" text-anchor="middle" class="diag-num-text">6</text>
+                  <rect x="90" y="956" width="510" height="84" class="diag-box diag-box-strong" />
+                  <text x="105" y="975" class="diag-pretitle">[ 6 ]&nbsp;&nbsp;report</text>
+                  <text x="345" y="998" text-anchor="middle" class="diag-step-title">A browsable report.</text>
+                  <text x="345" y="1022" text-anchor="middle" class="diag-step-sub">Findings &middot; Market-fit
+                    &middot; Topics, each as its own tab</text>
+                </g>
+                <g class="diag-note">
+                  <circle cx="660" cy="998" r="10" class="diag-num-ghost" />
+                  <text x="660" y="1002" text-anchor="middle" class="diag-num-ghost-text">6</text>
+                  <text x="684" y="980" class="diag-note-text">Tabbed so a student can read what their degree</text>
+                  <text x="684" y="998" class="diag-note-text">is missing, what to add next, and where each</text>
+                  <text x="684" y="1016" class="diag-note-text">recommendation came from. One click away.</text>
+                </g>
+
+                <!-- ============= LEGEND STRIP ============= -->
+                <line x1="40" y1="1068" x2="1080" y2="1068" class="diag-legend-rule" />
+                <g class="diag-legend">
+                  <text x="40" y="1090" class="diag-pretitle diag-pretitle-rust">legend</text>
+
+                  <line x1="130" y1="1086" x2="158" y2="1086" stroke="#4b443c" stroke-width="0.8"
+                    marker-end="url(#st2-arrow-tiny)" />
+                  <text x="166" y="1090" class="diag-legend-text">data flow</text>
+
+                  <line x1="280" y1="1086" x2="312" y2="1086" class="diag-trust-line" />
+                  <text x="320" y="1090" class="diag-legend-text">determinism line</text>
+
+                  <rect x="468" y="1079" width="14" height="14" class="diag-box-accent" />
+                  <text x="490" y="1090" class="diag-legend-text">deterministic only</text>
+
+                  <rect x="630" y="1079" width="14" height="14" class="diag-subbox" />
+                  <text x="652" y="1090" class="diag-legend-text">parallel lens</text>
+
+                  <text x="820" y="1090" class="diag-legend-text" text-anchor="start">tag&nbsp;&nbsp;[ n
+                    ]&nbsp;&nbsp;module id</text>
+                </g>
+              </svg>
+              <figcaption class="diag-cap">Stale audit and analysis pipeline. Left: how a slide deck moves through the
+                system, with the typed data passing between each stage. Right: the reasoning behind each layer.
+              </figcaption>
+            </figure>
+            <figure class="diagram-wrap diagram-panels m-only" aria-label="Stale agent pipeline">
+              <p class="dp-colhead">The system</p>
+              <ol class="dp-steps">
+
+                <!-- ============= STEP 1 · INPUT ============= -->
+                <li class="dp-step">
+                  <div class="dp-card dp-card-strong">
+                    <p class="dp-tag"><span class="dp-num">1</span>input</p>
+                    <h5 class="dp-title">A course comes in.</h5>
+                    <p class="dp-sub">Its slide decks &middot; plus the role you&apos;re chasing</p>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">course { decks[ ], role }</span></p>
+                </li>
+
+                <!-- ============= STEP 2 · RECALL ============= -->
+                <li class="dp-step">
+                  <div class="dp-card">
+                    <p class="dp-tag"><span class="dp-num">2</span>first pass &middot; wide net</p>
+                    <h5 class="dp-title">Cast a wide net.</h5>
+                    <p class="dp-sub">One AI reads every slide and lists anything that <em>might</em> be outdated. No
+                      judgment calls.</p>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">candidates[ ] { slide, claim }</span></p>
+                </li>
+
+                <!-- ============= STEP 3 · JUDGMENT ============= -->
+                <li class="dp-step">
+                  <div class="dp-card">
+                    <p class="dp-tag"><span class="dp-num">3</span>second pass &middot; careful scrutiny</p>
+                    <h5 class="dp-title">Weigh each candidate, one at a time.</h5>
+                    <p class="dp-sub">A more careful AI flags or skips each one, but a flag has to come back with a real
+                      source.</p>
+                  </div>
+                  <p class="dp-out dp-out-rust"><span class="dp-sig">flags[ ] { claim, citation }</span></p>
+                </li>
+
+                <!-- ============= STEP 4 · FACT-CHECK ============= -->
+                <li class="dp-step">
+                  <p class="dp-trust">determinism line</p>
+                  <div class="dp-card dp-card-accent">
+                    <p class="dp-tag"><span class="dp-num">4</span>a deterministic layer &middot; no AI here</p>
+                    <h5 class="dp-title">Fact-check every claim.</h5>
+                    <p class="dp-sub">A plain program re-downloads each cited source and confirms the quoted text is
+                      really there.</p>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">findings[ ] { claim, source, verified }</span></p>
+                </li>
+
+                <!-- ============= STEP 5 · TWO LENSES ============= -->
+                <li class="dp-step">
+                  <div class="dp-card">
+                    <p class="dp-tag"><span class="dp-num">5</span>two lenses</p>
+                    <h5 class="dp-title">Same verified findings, two lenses.</h5>
+                    <ul class="dp-lenses">
+                      <li class="dp-lens">
+                        <p class="dp-tag dp-tag-sub">lens a &middot; role-aware</p>
+                        <h6 class="dp-lens-title">Market-fit</h6>
+                        <p class="dp-lens-meta">what the role asks for, vs. what the courses taught</p>
+                        <p class="dp-sig">role &times; findings[ ] &rarr; gaps[ ]</p>
+                        <p class="dp-engine">managed agent</p>
+                      </li>
+                      <li class="dp-lens">
+                        <p class="dp-tag dp-tag-sub">lens b &middot; prescription</p>
+                        <h6 class="dp-lens-title">Topics</h6>
+                        <p class="dp-lens-meta">a ranked list of what to add next, in order</p>
+                        <p class="dp-sig">findings[ ] &rarr; ranked[ ]</p>
+                        <p class="dp-engine">managed agent</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="dp-out"><span class="dp-sig">report { findings, marketFit, topics }</span></p>
+                </li>
+
+                <!-- ============= STEP 6 · REPORT ============= -->
+                <li class="dp-step">
+                  <div class="dp-card dp-card-strong">
+                    <p class="dp-tag"><span class="dp-num">6</span>report</p>
+                    <h5 class="dp-title">A browsable report.</h5>
+                    <p class="dp-sub">Findings &middot; Market-fit &middot; Topics, each as its own tab</p>
+                  </div>
+                </li>
+              </ol>
+
+              <!-- ============= LEGEND ============= -->
+              <div class="dp-legend">
+                <p class="dp-tag dp-tag-rust">legend</p>
+                <ul>
+                  <li><span class="dp-key dp-key-flow" aria-hidden="true"></span>data flow</li>
+                  <li><span class="dp-key dp-key-trust" aria-hidden="true"></span>determinism line</li>
+                  <li><span class="dp-key dp-key-det" aria-hidden="true"></span>deterministic only</li>
+                  <li><span class="dp-key dp-key-lens" aria-hidden="true"></span>parallel lens</li>
+                </ul>
+              </div>
+              <figcaption class="diag-cap">Stale audit and analysis pipeline: how a slide deck moves through the system,
+                with the typed data passing between each stage.</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 05  CAPABILITIES
+       ============================================================ -->
+      <section class="section section-capabilities" id="capabilities">
+        <header class="section-head">
+          <div class="head-left">
+            <span class="section-mark">§ 05</span>
+            <h2 class="section-title">Capabilities</h2>
+          </div>
+          <div class="head-right">
+            <span class="head-anno">Tools, frameworks, practice</span>
+          </div>
+        </header>
+
+        <div class="cap-grid">
+          <div class="cap-col">
+            <h3 class="cap-h">Offensive &amp; reconnaissance</h3>
+            <ul>
+              <li>Metasploit</li>
+              <li>Nmap</li>
+              <li>Burp&nbsp;Suite</li>
+              <li>Wireshark</li>
+              <li>TCP / IP</li>
+            </ul>
+          </div>
+
+          <div class="cap-col">
+            <h3 class="cap-h">Analysis &amp; forensics</h3>
+            <ul>
+              <li>Oledump</li>
+              <li>Static PE analysis · <span class="mono">pefile</span></li>
+              <li>Log analysis · SIEM (Splunk)</li>
+              <li>Malware family classification</li>
+              <li>IOC extraction</li>
+            </ul>
+          </div>
+
+          <div class="cap-col">
+            <h3 class="cap-h">Engineering</h3>
+            <ul>
+              <li>Python</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>Web application stack · Flask, FastAPI</li>
+              <li>Artificial Intelligence · ML</li>
+            </ul>
+          </div>
+
+          <div class="cap-col">
+            <h3 class="cap-h">Standards &amp; frameworks</h3>
+            <ul>
+              <li>NIST SP 800-61 Rev. 3</li>
+              <li>NIST SP 800-30</li>
+              <li>MITRE ATT&amp;CK · D3FEND</li>
+              <li>CISA advisories</li>
+              <li>NCA controls</li>
+            </ul>
+          </div>
+
+          <div class="cap-col">
+            <h3 class="cap-h">Practice</h3>
+            <ul>
+              <li>Incident response &amp; threat triage</li>
+              <li>Technical reporting &amp; documentation</li>
+              <li>Security architecture &amp; design</li>
+              <li>Root cause analysis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 06  EXPERIENCE & EDUCATION
+       ============================================================ -->
+      <section class="section section-service" id="service">
+        <style>
+          ul.internship-bullets li::before {
+            content: none;
+          }
+          .internship-icon {
+            position: absolute;
+            left: 0;
+            top: 0.14em;
+            width: 15px;
+            height: 15px;
+            color: var(--rust);
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+          ul.internship-bullets li {
+            text-align: justify;
+            text-justify: inter-word;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+          }
+          @media (max-width: 720px) {
+            .internship-bullets {
+              margin-left: -16px;
+              width: calc(100% + 16px);
+            }
+            ul.internship-bullets li {
+              padding-left: 30px;
+              text-align: justify;
+              text-align-last: left;
+              text-justify: inter-word;
+              -webkit-hyphens: auto;
+              hyphens: auto;
+            }
+          }
+          @media (max-width: 640px) {
+            .section-service .timeline {
+              padding-left: 0;
+            }
+            .section-service .timeline::before,
+            .section-service .time-rail {
+              display: none;
+            }
+            .section-service .time-entry {
+              grid-template-columns: minmax(0, 1fr);
+              gap: 8px;
+              padding: 32px 0;
+            }
+            .section-service .time-when,
+            .section-service .time-what {
+              grid-column: 1;
+              margin-top: 0;
+            }
+            .internship-bullets {
+              width: 100%;
+              margin-left: 0;
+            }
+            ul.bullets.internship-bullets li {
+              padding-left: 0;
+              text-align: left;
+            }
+            .internship-icon {
+              position: static;
+              display: block;
+              width: 18px;
+              height: 18px;
+              margin: 0 0 10px;
+            }
+            ul.bullets.internship-bullets li + li {
+              margin-top: 18px;
+            }
+          }
+        </style>
+        <header class="section-head">
+          <div class="head-left">
+            <span class="section-mark">§ 06</span>
+            <h2 class="section-title">Experience &amp; Education</h2>
+          </div>
+        </header>
+
+        <div class="timeline">
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">June&nbsp;2026 &ndash; Aug&nbsp;2026</div>
+            <div class="time-what">
+              <h3>Khalifa A. Algosaibi Investments</h3>
+              <span class="time-where">Cybersecurity Intern</span>
+              <ul class="bullets internship-bullets">
+                <li><svg class="internship-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="2"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg><strong>Offensive Security:</strong> Exploited a <strong>CVSS 8.8 CISA KEV</strong> during an authorized endpoint penetration test, capturing NTLMv2 credential material with <strong>Kali Linux</strong> and <strong>Metasploit</strong>.</li>
+                <li><svg class="internship-icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="8 9 3 12 8 15"></polyline><polyline points="16 9 21 12 16 15"></polyline><line x1="14" y1="5" x2="10" y2="19"></line></svg><strong>Custom Tooling &amp; AI:</strong> Built <strong>EventEyes</strong>, a Windows security assessment framework analyzing event logs and system configurations to generate an HTML dashboard; surfaced six validated findings and later evolved it into <a
+                    href="https://github.com/Rayan-and-beyond/Verifact" target="_blank"
+                    rel="noopener noreferrer" style="color: var(--rust); text-decoration-color: color-mix(in srgb, var(--rust) 45%, transparent); text-underline-offset: 3px; font-style: italic;">Verifact</a>, a public AI-agent skill for Codex and Claude Code.</li>
+                <li><svg class="internship-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 12 18 8M12 7a5 5 0 0 0-5 5M12 3v2M21 12h-2"></path></svg><strong>Attack Surface Management:</strong> Assessed KAI's external exposure with <strong>CTM360</strong> across DNS, SSL/TLS, exposed services, and corporate accounts appearing in breach datasets; delivered prioritized remediation recommendations to the Group IT Manager.</li>
+                <li><svg class="internship-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.2-8 10-4.6-1.8-8-5-8-10V6l8-3Z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg><strong>Security Architecture &amp; Posture:</strong> Built two iterations of KAI's cybersecurity risk register, designed a VLAN-segmented network with a default-deny firewall baseline, and audited Windows endpoints against <strong>CIS Benchmarks</strong> and <strong>Microsoft Security Baselines</strong>.</li>
+                <li><svg class="internship-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h6M9 3h6v4H9zM7 5H5v16h14V5h-2"></path><path d="m8 12 1.5 1.5L12 11M8 17h8M14 12h2"></path></svg><strong>Operations &amp; Delivery:</strong> Produced management reports, remediation plans, and security case studies while handling approximately <strong>50 IT support tickets</strong> through <strong>iTop</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">Aug&nbsp;2021 &ndash; June&nbsp;2026</div>
+            <div class="time-what">
+              <h3>Bachelor of Computer Science</h3>
+              <span class="time-where">Imam Abdulrahman Bin Faisal University</span>
+              <p>GPA&nbsp;<bdi class="gpa-value" dir="ltr"><strong>4.4</strong>&nbsp;/&nbsp;5</bdi> · Second Honours Degree</p>
+            </div>
+          </div>
+
+          <div class="time-entry time-now">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">Jan&nbsp;2022 &ndash; Present</div>
+            <div class="time-what">
+              <h3>King Abdulaziz Center for World Culture <span class="time-sub">· Ithra, by Saudi Aramco</span></h3>
+              <span class="time-where">Volunteer · long-term</span>
+              <p>Multi-year volunteer engagement with one of Saudi Arabia's flagship cultural institutions.</p>
+            </div>
+          </div>
+
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">Aug&nbsp;2023 &ndash; Aug&nbsp;2025</div>
+            <div class="time-what">
+              <h3>Cybersecurity Club</h3>
+              <span class="time-where">Imam Abdulrahman Bin Faisal University · Administrative</span>
+              <p>Administrative role across two academic years, supporting club operations and event coordination.</p>
+            </div>
+          </div>
+
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">Jan&nbsp;2024 &ndash; Aug&nbsp;2025</div>
+            <div class="time-what">
+              <h3>Computer Science &amp; Information Technology Club</h3>
+              <span class="time-where">Imam Abdulrahman Bin Faisal University · Administrative, then crowd
+                organizer</span>
+              <p>Started in an administrative role, then moved into crowd organizing for club events.</p>
+            </div>
+          </div>
+
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">Jan&nbsp;2024 &ndash; June&nbsp;2024</div>
+            <div class="time-what">
+              <h3>Google Developer Student Club</h3>
+              <span class="time-where">Imam Abdulrahman Bin Faisal University · Finance lead</span>
+              <p>Managed the club's budget and ran spending for the year's events.</p>
+            </div>
+          </div>
+
+          <div class="time-entry">
+            <div class="time-rail"><span class="dot"></span></div>
+            <div class="time-when">June&nbsp;2024</div>
+            <div class="time-what">
+              <h3>Hajj Season · 1445&nbsp;AH</h3>
+              <span class="time-where">Saudi Arabian Boy Scouts Association · Crowd organizer</span>
+              <p>Crowd organizing during one of the largest annual gatherings in the world.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 07  LANGUAGES · short banner
+       ============================================================ -->
+      <section class="section section-lang">
+        <div class="lang-wrap">
+          <div class="lang">
+            <span class="lang-name">Arabic</span>
+            <span class="lang-lvl">Native</span>
+          </div>
+          <div class="lang-div">·</div>
+          <div class="lang">
+            <span class="lang-name">English</span>
+            <span class="lang-lvl">Professional working proficiency</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       § 07  CONTACT
+       ============================================================ -->
+      <section class="section section-contact" id="contact">
+        <header class="section-head">
+          <div class="head-left">
+            <span class="section-mark">§ 07</span>
+            <h2 class="section-title">Contact</h2>
+          </div>
+        </header>
+
+        <div class="contact-grid">
+          <p class="contact-lede">
+            Open to <em>full-time roles</em> in cybersecurity: SOC, offensive security, security engineering.</p>
+
+          <div class="contact-buttons">
+            <div class="contact-btn contact-btn--primary">
+              <a class="cb-main" href="mailto:RayanAhmed.ALH@outlook.com">
+                <span class="cb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="1.5" />
+                    <path d="m4 6.5 8 6 8-6" />
+                  </svg></span>
+                <span class="cb-label">Email</span>
+              </a>
+              <button class="cb-copy" type="button" data-copy-email="RayanAhmed.ALH@outlook.com"
+                aria-label="Copy email address" data-cursor-note="Copy email">
+                <svg class="cb-glyph cb-glyph-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="12" height="12" rx="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+                <svg class="cb-glyph cb-glyph-check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12.5 9.5 18 20 6.5" />
+                </svg>
+                <span class="cb-copy-status" role="status"></span>
+              </button>
+            </div>
+            <a class="contact-btn" href="assets/cv/Rayan%20Alhusennan%20CV%20%5BCybersecurity%5D.pdf" download
+              rel="nofollow" aria-label="Download CV, PDF">
+              <span class="cb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 3v5h5" />
+                  <path d="M8.5 13h7M8.5 17h5" />
+                </svg></span>
+              <span class="cb-label">CV</span>
+            </a>
+            <a class="contact-btn" href="https://www.linkedin.com/in/rayan-alhusennan/" target="_blank"
+              rel="noopener noreferrer">
+              <span class="cb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg></span>
+              <span class="cb-label">LinkedIn</span>
+            </a>
+            <a class="contact-btn" href="https://github.com/Rayan-and-beyond" target="_blank" rel="noopener noreferrer">
+              <span class="cb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg></span>
+              <span class="cb-label">GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       FOOTER
+       The paper footer signs the file off in ink on every path. On the
+       machine path the MACHINE then rises under it at full width, flush
+       with the very end of the page, with the sheet the visitor has been
+       reading seated in its slot: the last thing in the dossier, and the
+       device the dossier lives in.
+       ============================================================ -->
+      <footer class="footer">
+        <div class="foot-grid">
+          <div class="foot-left">
+            <div class="signature">
+              <em>R</em>ayan&nbsp;<span class="sig-last">Alhusennan</span>
+            </div>
+          </div>
+          <div class="foot-right">
+            <div class="foot-actions">
+              <a href="#top" class="back-top">
+                Return to top
+                <svg viewBox="0 0 20 20">
+                  <path d="M10 17 V3 M5 8 L10 3 L15 8" stroke="currentColor" stroke-width="1" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="foot-end">
+          <span class="rule"></span>
+          <span class="end-mark">· END FILE ·</span>
+          <span class="rule"></span>
+        </div>
+
+        <!-- THE MACHINE · on the full cinematic path the machine rises under
+             the signed-off paper at full width, wider than the page, flush
+             with the document's very end: the reader's own sheet sits seated
+             in its intake slot, the etched line under it is the machine's one
+             sentence, and the fascia carries the pilot lamp, RESET, and the
+             guarded POWER toggle. The controls ship hidden: main.js is the
+             only thing that reveals them, so ?dossier and deep-link entries
+             render no way out and keep the plain paper .back-top link above. -->
+        <div class="machine-panel" hidden>
+          <div class="machine-intake" aria-hidden="true">
+            <span class="machine-slot"><span class="machine-slot-file"></span></span>
+          </div>
+
+          <!-- The name is cast into the case like a restrained maker's mark. -->
+          <div class="machine-deck">
+            <div class="machine-identity" aria-hidden="true">
+              <span class="machine-name">
+                <span class="machine-badge-copy"><em>R</em>ayan Alhusennan</span>
+              </span>
+              <div class="machine-seal">
+                <svg viewBox="0 0 200 200">
+                  <defs>
+                    <path id="machine-seal-arc-top" d="M 21,100 A 79,79 0 0 1 179,100" />
+                    <path id="machine-seal-arc-bot" d="M 12,100 A 88,88 0 0 0 188,100" />
+                  </defs>
+                  <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="0.5" />
+                  <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="0.5" />
+                  <circle cx="100" cy="100" r="67" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="5.2"
+                    fill="currentColor" text-anchor="middle">
+                    <textPath href="#machine-seal-arc-top" startOffset="50%">CYBERSECURITY</textPath>
+                  </text>
+                  <text font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="0.5"
+                    fill="currentColor" text-anchor="middle">
+                    <textPath href="#machine-seal-arc-bot" startOffset="50%">PENETRATION TESTING · SECURITY ENGINEERING</textPath>
+                  </text>
+                  <path class="machine-seal-gem" d="M 179.5 96.6 L 182.9 100 L 179.5 103.4 L 176.1 100 Z" />
+                  <path class="machine-seal-gem" d="M 20.5 96.6 L 23.9 100 L 20.5 103.4 L 17.1 100 Z" />
+                  <text x="100" y="110.8" text-anchor="middle" font-family="Fraunces, serif" font-style="italic"
+                    font-size="30" fill="currentColor" font-weight="500">RA</text>
+                </svg>
+              </div>
+            </div>
+            <span class="machine-louvers" hidden aria-hidden="true"></span>
+            <div class="case-signature" role="img"
+              aria-label="A concealed optical aperture is molded directly into the Macintosh case.">
+              <canvas class="case-signature-canvas" aria-hidden="true"></canvas>
+            </div>
+          </div>
+
+          <!-- The control seam: a LavaRand camera feed at one end, cast like the
+               keys, and the case-cast RESET and POWER keys at the other. RESET
+               rewinds the file; POWER leaves the machine and dims the lamps. -->
+          <div class="machine-fascia">
+            <div class="machine-lava" aria-hidden="true"><canvas class="machine-lava-canvas"></canvas></div>
+
+            <div class="machine-switchgear">
+              <span class="machine-pilot" aria-hidden="true"></span>
+
+              <a class="machine-key machine-reset" href="#top" data-cursor-note="Back to top"
+                aria-label="Return to the top of the portfolio">
+                <span class="machine-key-face" aria-hidden="true">
+                  <svg class="machine-key-glyph" viewBox="0 0 24 24">
+                    <path d="M12 19.4V5.2M5.6 11.6 12 5.2l6.4 6.4" stroke="currentColor" stroke-width="2.1" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span class="machine-key-label">Reset</span>
+                </span>
+              </a>
+
+              <button class="machine-key machine-power dossier-exit" type="button" hidden data-cursor-note="Exit"
+                aria-label="Power the machine down and step back outside">
+                <span class="machine-key-face" aria-hidden="true">
+                  <svg class="machine-key-glyph" viewBox="0 0 24 24">
+                    <path d="M12 3.4v8.4" stroke="currentColor" stroke-width="2.3" fill="none" stroke-linecap="round" />
+                    <path d="M6.9 6.6a7.2 7.2 0 1 0 10.2 0" stroke="currentColor" stroke-width="2.3" fill="none"
+                      stroke-linecap="round" />
+                  </svg>
+                  <span class="machine-key-label">Power</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ============================================================
+       PRINT SHEET · screen-invisible, the only thing @media print shows. Lives OUTSIDE #dossier-root on purpose: the dossier is display:none whenever html.machine-booting is set, so a Cmd+P from the desert would otherwise print a blank page. This sheet is state-independent. Mirrors §00 (name), §02 (credentials), §06 (education, experience) and §07 (contact). If any of those change, change this too.
+       ============================================================ -->
+  <section class="print-sheet" aria-hidden="true">
+    <img class="ps-cv" alt="" decoding="async">
+
+    <div class="ps-fallback">
+      <header class="ps-head">
+        <h1 class="ps-name">Rayan Alhusennan</h1>
+        <p class="ps-role">Cybersecurity &middot; Incident Response &middot; Penetration Testing</p>
+        <p class="ps-contact">
+          <span>RayanAhmed.ALH@outlook.com</span>
+          <span>linkedin.com/in/rayan-alhusennan</span>
+          <span>github.com/Rayan-and-beyond</span>
+        </p>
+      </header>
+
+      <section class="ps-block">
+        <h2 class="ps-h">Education</h2>
+        <div class="ps-item">
+          <div class="ps-item-head">
+            <h3>Bachelor of Computer Science</h3>
+            <span class="ps-when">Aug&nbsp;2021 &ndash; June&nbsp;2026</span>
+          </div>
+          <p class="ps-where">Imam Abdulrahman Bin Faisal University &middot; GPA&nbsp;4.4&nbsp;/&nbsp;5 &middot; Second&nbsp;Honours&nbsp;Degree</p>
+          <p class="ps-note">Emphasis on systems, networks, AI/ML, and cybersecurity electives.</p>
+        </div>
+      </section>
+
+      <section class="ps-block">
+        <h2 class="ps-h">Experience</h2>
+        <div class="ps-item">
+          <div class="ps-item-head">
+            <h3>Khalifa A. Algosaibi Investments</h3>
+            <span class="ps-when">June&nbsp;2026 &ndash; Aug&nbsp;2026</span>
+          </div>
+          <p class="ps-where">Cybersecurity Intern</p>
+          <p class="ps-note">Built EventEyes, assessed KAI's external and internal security posture, executed an
+            authorized endpoint penetration test, translated findings into prioritized business risk, and handled
+            approximately 50 iTop support requests.</p>
+        </div>
+        <div class="ps-item">
+          <div class="ps-item-head">
+            <h3>Cybersecurity Incident Response Analysis</h3>
+            <span class="ps-when">Virtual work experience</span>
+          </div>
+          <p class="ps-where">STC &times; Misk</p>
+        </div>
+      </section>
+
+      <section class="ps-block">
+        <h2 class="ps-h">Certifications</h2>
+        <ul class="ps-creds">
+          <li><span class="ps-cred-name">eJPTv2</span> <span class="ps-cred-by">INE</span></li>
+          <li><span class="ps-cred-name">Security+</span> <span class="ps-cred-by">CompTIA</span></li>
+          <li><span class="ps-cred-name">Advanced Cybersecurity Training Program</span> <span class="ps-cred-by">KAUST
+              Academy &times; NCA</span></li>
+          <li><span class="ps-cred-name">McKinsey Forward</span> <span class="ps-cred-by">McKinsey.org</span></li>
+          <li><span class="ps-cred-name">Network and Communications Security</span> <span
+              class="ps-cred-by">ISC&sup2;</span></li>
+          <li><span class="ps-cred-name">Systems and Application Security</span> <span
+              class="ps-cred-by">ISC&sup2;</span></li>
+          <li><span class="ps-cred-name">Incident Response and Recovery</span> <span class="ps-cred-by">ISC&sup2;</span>
+          </li>
+          <li><span class="ps-cred-name">Security Principles and Operations</span> <span
+              class="ps-cred-by">ISC&sup2;</span></li>
+          <li><span class="ps-cred-name">Principles of Secure Coding</span> <span
+              class="ps-cred-by">UC&nbsp;Davis</span></li>
+          <li><span class="ps-cred-name">eCPPTv3</span> <span class="ps-cred-by">INE &middot; in study</span></li>
+        </ul>
+      </section>
+
+      <section class="ps-block ps-block-lang">
+        <h2 class="ps-h">Languages</h2>
+        <p class="ps-where">Arabic, native &middot; English, professional working proficiency</p>
+      </section>
+
+      <footer class="ps-foot">
+        <span>Full portfolio &middot; rayanalhusennan.me</span>
+        <span>Open to full-time roles in cybersecurity</span>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    /* Print prints the CV, not the dossier.
+       The real typeset CV is the authority; a page render of it is what comes
+       out of Cmd+P. The markup above is only the no-JS fallback, so the print
+       path degrades to readable text rather than to nothing.
+       The render is fetched at idle only after the dossier opens and forced
+       ahead of the browser's own print dialog when the shortcut is pressed.
+  
+       Regenerate cv-print.jpg whenever the CV PDF changes:
+         sips -s format jpeg -s formatOptions 55 --resampleWidth 1654 \
+           "public/assets/cv/Rayan Alhusennan CV [Cybersecurity].pdf" \
+           --out public/assets/cv/cv-print.jpg  */
+    (function () {
+      var img = document.querySelector(".ps-cv");
+      if (!img) return;
+      var SRC = "/assets/cv/cv-print.jpg";
+      var loadPromise = null;
+
+      function load() {
+        if (loadPromise) return loadPromise;
+        if (observer) observer.disconnect();
+        if (warmTimer) { clearTimeout(warmTimer); warmTimer = 0; }
+        loadPromise = new Promise(function (done) {
+          img.onload = function () {
+            document.querySelector(".print-sheet").classList.add("has-cv");
+            done();
+          };
+          img.onerror = done;   // fallback sheet stays visible
+          img.fetchPriority = "low";
+          img.src = SRC;
+        });
+        return loadPromise;
+      }
+
+      // Warm only after the dossier opens. The boot and visitors who stay in
+      // the 3D experience never pay for a print-only image.
+      var net = navigator.connection || {};
+      var thrifty = net.saveData || /^(slow-)?2g$/.test(net.effectiveType || "");
+      if (!thrifty) {
+        var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 0); };
+        var warmTimer = 0;
+        var observer = null;
+        var warmAfterDossier = function () {
+          if (!document.body.classList.contains("dossier-on") || loadPromise || warmTimer) return;
+          if (observer) observer.disconnect();
+          warmTimer = setTimeout(function () { idle(load, { timeout: 10000 }); }, 3000);
+        };
+        observer = new MutationObserver(warmAfterDossier);
+        observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+        warmAfterDossier();
+      }
+
+      window.addEventListener("beforeprint", load);
+
+      // the shortcut path: guarantee the render is decoded before the dialog opens
+      window.addEventListener("keydown", function (e) {
+        if (!(e.key === "p" || e.key === "P") || !(e.metaKey || e.ctrlKey) || e.altKey) return;
+        if (document.querySelector(".print-sheet").classList.contains("has-cv")) return;
+        e.preventDefault();
+        load().then(function () { window.print(); });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

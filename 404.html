@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>404 · Signal Lost | Rayan Alhusennan</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #efe8d8;
+    --paper-shade: #e7dfca;
+    --ink: #16130f;
+    --ink-soft: #4b443c;
+    --ink-mute: #6e6759;
+    --rust: #b54426;
+    --serif: "Fraunces", Georgia, serif;
+    --mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+  }
+  /* classification bar, mirrors the portfolio header */
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px clamp(20px, 5vw, 64px);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    border-bottom: 1px solid rgba(22, 19, 15, 0.12);
+  }
+  .bar .dot { color: var(--rust); }
+  .wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(32px, 8vh, 96px) clamp(20px, 5vw, 64px);
+    max-width: 1100px;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-weight: 300;
+    font-size: clamp(72px, 18vw, 220px);
+    line-height: 0.86;
+    letter-spacing: -0.02em;
+    font-optical-sizing: auto;
+  }
+  h1 em { font-style: italic; color: var(--rust); }
+  .lede {
+    margin-top: 28px;
+    font-size: clamp(18px, 2.4vw, 24px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    min-height: 44px;
+    padding: 10px 0 8px;
+    width: fit-content;
+    transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  }
+  .home:hover { color: var(--rust); border-color: var(--rust); gap: 16px; }
+  .home:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+  .home .arrow { transition: transform 0.25s ease; }
+  .home:hover .arrow { transform: translateX(4px); }
+  footer {
+    padding: 22px clamp(20px, 5vw, 64px);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    border-top: 1px solid rgba(22, 19, 15, 0.12);
+  }
+  @media (max-width: 640px) {
+    .lede { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .home,
+    .home .arrow { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span><span class="dot" aria-hidden="true">●</span>&nbsp;&nbsp;FILE NOT FOUND</span>
+    <span>ERR // 404</span>
+  </div>
+  <main class="wrap">
+    <p class="kicker">§ 404 · Signal Lost</p>
+    <h1>Off the <em>record.</em></h1>
+    <p class="lede">This page is not in the portfolio. The link may be stale, or the page may have moved.</p>
+    <a class="home" href="/">Return to the portfolio <span class="arrow" aria-hidden="true">&rarr;</span></a>
+  </main>
+  <footer>Rayan Alhusennan · Cybersecurity</footer>
+</body>
+</html>

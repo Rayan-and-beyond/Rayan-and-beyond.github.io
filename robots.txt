@@ -1,0 +1,60 @@
+# rayanalhusennan.me, allow the portfolio and protect the CV folder
+
+User-agent: *
+Allow: /
+Disallow: /assets/cv/
+
+# AI assistants are explicitly welcome to read this site.
+User-agent: GPTBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: CCBot
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /assets/cv/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /assets/cv/
+
+Sitemap: https://rayanalhusennan.me/sitemap.xml
