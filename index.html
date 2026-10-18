@@ -379,8 +379,8 @@
 
     /* fixed styling arrives inline at show-time via setIgnite() */
   </style>
-  <script type="module" crossorigin src="./assets/index-BViYiHm5.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BDfAd28T.css">
+  <script type="module" crossorigin src="./assets/index-DPf4oxli.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Dene75V5.css">
 </head>
 
 <body>
@@ -828,20 +828,20 @@
           <ul class="case-meta">
             <li><span class="k">Role</span><span class="v">Security engineer · Playbook author · ML lead · Architect ·
                 Designer</span></li>
-            <li><span class="k">Stack</span><span class="v">Python · Flask · SQLite · LightGBM · VirusTotal API ·
-                pefile</span></li>
-            <li><span class="k">Standards</span><span class="v">NIST SP 800-61r3 · SP 800-30 · CISA · NCA · ATT&amp;CK ·
-                D3FEND</span></li>
             <li><span class="k">Status</span><span class="v"><a class="case-meta-link"
                   href="https://threatsense-demo.onrender.com/" target="_blank" rel="noopener noreferrer">LIVE <span
                     class="arrow" aria-hidden="true">↗&#xFE0E;</span></a></span></li>
           </ul>
 
-          <div class="case-quote">
+          <div class="case-quote case-quote-outcome">
             <p>
               <span class="quote-open">“</span>Incident Response tools stop at identification. Nobody writes the
               response plan for you.<br /><em>ThreatSense does.</em><span class="quote-open">”</span>
             </p>
+            <div class="case-outcome">
+              <span class="stat-big stat-duration case-outcome-value"><span class="stat-duration-part">8<span class="dim">h</span></span><span class="dim stat-duration-arrow" aria-hidden="true"> → </span><span class="stat-duration-part">10<span class="dim">min</span></span></span>
+              <span class="case-outcome-label">Analyst time per sample</span>
+            </div>
           </div>
 
           <div class="case-section">
@@ -853,6 +853,92 @@
               against three different standards documents.</p>
           </div>
 
+          <div class="case-section case-tryit">
+            <h4 class="case-h">The rule engine, live</h4>
+            <div class="tryit">
+              <p class="tryit-deck">Pick a technique. The engine returns the matching D3FEND countermeasure, a one-line
+                recommendation, and the standard it cites. <span class="tryit-count-desk">Six</span><span
+                  class="tryit-count-mob">Three</span> of the thirty-five rules.</p>
+
+              <div class="tryit-chips" role="group" aria-label="ATT&amp;CK techniques">
+                <button class="tryit-chip is-active" type="button" data-rule-idx="0" aria-pressed="true">
+                  <span class="chip-id">T1486</span>
+                  <span class="chip-tactic">Impact</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="1" aria-pressed="false">
+                  <span class="chip-id">T1003</span>
+                  <span class="chip-tactic">Credential Access</span>
+                </button>
+                <button class="tryit-chip" type="button" data-rule-idx="2" aria-pressed="false">
+                  <span class="chip-id">T1059</span>
+                  <span class="chip-tactic">Execution</span>
+                </button>
+                <button class="tryit-chip" type="button" data-rule-idx="3" aria-pressed="false">
+                  <span class="chip-id">T1547.001</span>
+                  <span class="chip-tactic">Persistence</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="4" aria-pressed="false">
+                  <span class="chip-id">T1071</span>
+                  <span class="chip-tactic">Command &amp; Control</span>
+                </button>
+                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="5" aria-pressed="false">
+                  <span class="chip-id">T1021</span>
+                  <span class="chip-tactic">Lateral Movement</span>
+                </button>
+              </div>
+
+              <div class="tryit-panel" aria-live="polite">
+                <div class="tryit-row">
+                  <span class="tryit-pretitle">Observed technique</span>
+                  <div class="tryit-row-body">
+                    <span class="tryit-id" data-field="attackId">T1486</span>
+                    <span class="tryit-name" data-field="attackName">Data Encrypted for Impact</span>
+                    <span class="tryit-meta-sub" data-field="meta">Impact tactic · Ransomware</span>
+                  </div>
+                </div>
+
+                <div class="tryit-row">
+                  <span class="tryit-pretitle">D3FEND countermeasure</span>
+                  <div class="tryit-row-body">
+                    <span class="tryit-id" data-field="d3fendId">D3-NI</span>
+                    <span class="tryit-name" data-field="d3fendName">Network Isolation</span>
+                  </div>
+                </div>
+
+                <div class="tryit-row tryit-row-action">
+                  <span class="tryit-pretitle">Recommendation</span>
+                  <p class="tryit-action" data-field="action">Isolate the host immediately. Do not power it off;
+                    encryption keys may still be recoverable from memory.</p>
+                </div>
+
+                <div class="tryit-row tryit-row-cite">
+                  <span class="tryit-pretitle">Cited to</span>
+                  <span class="tryit-cite" data-field="citation">CISA #StopRansomware Checklist §1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <details class="case-details">
+            <summary>
+              <span class="case-details-title">Technical details</span>
+              <span class="case-details-scope">Pipeline, architecture &amp; results</span>
+              <span class="case-details-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="case-details-body">
+          <section class="case-build" aria-label="ThreatSense build notes">
+            <h4 class="case-h">Build notes</h4>
+            <div class="case-build-content">
+              <p class="case-build-lede">Python, from sample to response.</p>
+              <dl class="case-build-tools">
+                <div><dt>Application &amp; storage</dt><dd>Flask · SQLite</dd></div>
+                <div><dt>Evidence &amp; analysis</dt><dd>VirusTotal · pefile · EMBER2024</dd></div>
+                <div><dt>Classification</dt><dd>LightGBM</dd></div>
+              </dl>
+              <p class="case-build-sources"><span>Grounded in</span> NIST SP 800-61r3 · SP 800-30 · CISA · NCA · ATT&amp;CK · D3FEND</p>
+            </div>
+          </section>
           <div class="case-section">
             <h4 class="case-h">What it does, end to end</h4>
             <ol class="numbered m-only">
@@ -1240,71 +1326,6 @@
             </figure>
           </div>
 
-          <div class="case-section case-tryit">
-            <h4 class="case-h">The rule engine, live</h4>
-            <div class="tryit">
-              <p class="tryit-deck">Pick a technique. The engine returns the matching D3FEND countermeasure, a one-line
-                recommendation, and the standard it cites. <span class="tryit-count-desk">Six</span><span
-                  class="tryit-count-mob">Three</span> of the thirty-five rules.</p>
-
-              <div class="tryit-chips" role="group" aria-label="ATT&amp;CK techniques">
-                <button class="tryit-chip is-active" type="button" data-rule-idx="0" aria-pressed="true">
-                  <span class="chip-id">T1486</span>
-                  <span class="chip-tactic">Impact</span>
-                </button>
-                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="1" aria-pressed="false">
-                  <span class="chip-id">T1003</span>
-                  <span class="chip-tactic">Credential Access</span>
-                </button>
-                <button class="tryit-chip" type="button" data-rule-idx="2" aria-pressed="false">
-                  <span class="chip-id">T1059</span>
-                  <span class="chip-tactic">Execution</span>
-                </button>
-                <button class="tryit-chip" type="button" data-rule-idx="3" aria-pressed="false">
-                  <span class="chip-id">T1547.001</span>
-                  <span class="chip-tactic">Persistence</span>
-                </button>
-                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="4" aria-pressed="false">
-                  <span class="chip-id">T1071</span>
-                  <span class="chip-tactic">Command &amp; Control</span>
-                </button>
-                <button class="tryit-chip tryit-chip--desk-only" type="button" data-rule-idx="5" aria-pressed="false">
-                  <span class="chip-id">T1021</span>
-                  <span class="chip-tactic">Lateral Movement</span>
-                </button>
-              </div>
-
-              <div class="tryit-panel" aria-live="polite">
-                <div class="tryit-row">
-                  <span class="tryit-pretitle">Observed technique</span>
-                  <div class="tryit-row-body">
-                    <span class="tryit-id" data-field="attackId">T1486</span>
-                    <span class="tryit-name" data-field="attackName">Data Encrypted for Impact</span>
-                    <span class="tryit-meta-sub" data-field="meta">Impact tactic · Ransomware</span>
-                  </div>
-                </div>
-
-                <div class="tryit-row">
-                  <span class="tryit-pretitle">D3FEND countermeasure</span>
-                  <div class="tryit-row-body">
-                    <span class="tryit-id" data-field="d3fendId">D3-NI</span>
-                    <span class="tryit-name" data-field="d3fendName">Network Isolation</span>
-                  </div>
-                </div>
-
-                <div class="tryit-row tryit-row-action">
-                  <span class="tryit-pretitle">Recommendation</span>
-                  <p class="tryit-action" data-field="action">Isolate the host immediately. Do not power it off;
-                    encryption keys may still be recoverable from memory.</p>
-                </div>
-
-                <div class="tryit-row tryit-row-cite">
-                  <span class="tryit-pretitle">Cited to</span>
-                  <span class="tryit-cite" data-field="citation">CISA #StopRansomware Checklist §1</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="case-section case-stats">
             <h4 class="case-h">By the numbers</h4>
@@ -1333,6 +1354,7 @@
                 <span class="stat-big stat-duration"><span class="stat-duration-part">8<span class="dim">h</span></span><span class="dim stat-duration-arrow" aria-hidden="true"> → </span><span class="stat-duration-part">10<span class="dim">m</span></span></span>
                 <span class="stat-lbl">Analyst time per sample</span>
               </div>
+
             </div>
           </div>
 
@@ -1364,6 +1386,9 @@
                 Citations that look right but resolve wrong are worse than no citations.</li>
             </ul>
           </div>
+              <button class="case-details-close" type="button" hidden>Close technical details</button>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -1399,10 +1424,6 @@
             <li><span class="k">Event</span><span class="v"><a
                   href="https://cerebralvalley.ai/e/built-with-4-7-hackathon" target="_blank"
                   rel="noopener noreferrer">Built With Opus 4.7: A Claude Code Hackathon</a></span></li>
-            <li><span class="k">Stack</span><span class="v">Python · FastAPI · Jinja2 · Anthropic Managed Agents
-                API</span></li>
-            <li><span class="k">Sources</span><span class="v">JLS · Javadoc · JEPs · PEPs · RFCs · NIST · MDN</span>
-            </li>
             <li><span class="k">Status</span><span class="v"><a class="case-meta-link"
                   href="https://stale-gamma.vercel.app" target="_blank" rel="noopener noreferrer">LIVE <span
                     class="arrow" aria-hidden="true">↗&#xFE0E;</span></a></span></li>
@@ -1464,6 +1485,26 @@
               </div>
             </article>
           </div>
+
+
+          <details class="case-details">
+            <summary>
+              <span class="case-details-title">Technical details</span>
+              <span class="case-details-scope">Stack, sources &amp; architecture</span>
+              <span class="case-details-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="case-details-body">
+          <section class="case-build" aria-label="Stale build notes">
+            <h4 class="case-h">Build notes</h4>
+            <div class="case-build-content">
+              <p class="case-build-lede">Python, with a multi-agent audit.</p>
+              <dl class="case-build-tools case-build-tools-pair">
+                <div><dt>Web interface</dt><dd>FastAPI · Jinja2</dd></div>
+                <div><dt>Agent orchestration</dt><dd>Anthropic Managed Agents API</dd></div>
+              </dl>
+              <p class="case-build-sources"><span>Primary sources</span> JLS · Javadoc · JEPs · PEPs · RFCs · NIST · MDN</p>
+            </div>
+          </section>
 
           <div class="case-section case-arch">
             <h4 class="case-h">Architecture</h4>
@@ -1815,6 +1856,9 @@
             </figure>
           </div>
 
+              <button class="case-details-close" type="button" hidden>Close technical details</button>
+            </div>
+          </details>
         </div>
       </section>
 
